@@ -50,7 +50,9 @@ namespace StupidBlackjackSln {
       showHand();
             if (player1.Score > 21)
             {
-
+                FrmLose frmLose = new FrmLose();
+                frmLose.Show();
+                this.Hide();
             }
     }
 
