@@ -48,6 +48,10 @@ namespace StupidBlackjackSln {
     private void btnHit_Click(object sender, EventArgs e) {
       player1.giveCard(deck.dealCard());
       showHand();
+            if (player1.Score > 21)
+            {
+
+            }
     }
 
     private Bitmap FindBitmap(string value, string suit) {
