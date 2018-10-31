@@ -40,5 +40,10 @@ namespace StupidBlackjackSln {
             FrmLeaderboard leaderboard = new FrmLeaderboard();
             leaderboard.Show();
         }
+
+        private void btnOptions_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

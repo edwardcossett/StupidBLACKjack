@@ -47,10 +47,10 @@
             // btnNewGame
             // 
             this.btnNewGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewGame.Location = new System.Drawing.Point(16, 418);
-            this.btnNewGame.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNewGame.Location = new System.Drawing.Point(13, 418);
+            this.btnNewGame.Margin = new System.Windows.Forms.Padding(4);
             this.btnNewGame.Name = "btnNewGame";
-            this.btnNewGame.Size = new System.Drawing.Size(263, 74);
+            this.btnNewGame.Size = new System.Drawing.Size(233, 71);
             this.btnNewGame.TabIndex = 1;
             this.btnNewGame.Text = "New Game";
             this.btnNewGame.UseVisualStyleBackColor = true;
@@ -59,10 +59,10 @@
             // btnRulebook
             // 
             this.btnRulebook.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRulebook.Location = new System.Drawing.Point(328, 418);
-            this.btnRulebook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRulebook.Location = new System.Drawing.Point(254, 418);
+            this.btnRulebook.Margin = new System.Windows.Forms.Padding(4);
             this.btnRulebook.Name = "btnRulebook";
-            this.btnRulebook.Size = new System.Drawing.Size(303, 74);
+            this.btnRulebook.Size = new System.Drawing.Size(310, 71);
             this.btnRulebook.TabIndex = 2;
             this.btnRulebook.Text = "View Rulebook";
             this.btnRulebook.UseVisualStyleBackColor = true;
@@ -71,10 +71,10 @@
             // btnExitGame
             // 
             this.btnExitGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExitGame.Location = new System.Drawing.Point(992, 418);
-            this.btnExitGame.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExitGame.Location = new System.Drawing.Point(1019, 418);
+            this.btnExitGame.Margin = new System.Windows.Forms.Padding(4);
             this.btnExitGame.Name = "btnExitGame";
-            this.btnExitGame.Size = new System.Drawing.Size(263, 74);
+            this.btnExitGame.Size = new System.Drawing.Size(220, 71);
             this.btnExitGame.TabIndex = 3;
             this.btnExitGame.Text = "Exit Game";
             this.btnExitGame.UseVisualStyleBackColor = true;
@@ -83,19 +83,21 @@
             // btnOptions
             // 
             this.btnOptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOptions.Location = new System.Drawing.Point(680, 418);
-            this.btnOptions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOptions.Location = new System.Drawing.Point(839, 418);
+            this.btnOptions.Margin = new System.Windows.Forms.Padding(4);
             this.btnOptions.Name = "btnOptions";
-            this.btnOptions.Size = new System.Drawing.Size(263, 74);
+            this.btnOptions.Size = new System.Drawing.Size(172, 71);
             this.btnOptions.TabIndex = 4;
             this.btnOptions.Text = "Options";
             this.btnOptions.UseVisualStyleBackColor = true;
+            this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
             // 
             // btnLeaderboard
             // 
-            this.btnLeaderboard.Location = new System.Drawing.Point(348, 340);
+            this.btnLeaderboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLeaderboard.Location = new System.Drawing.Point(571, 418);
             this.btnLeaderboard.Name = "btnLeaderboard";
-            this.btnLeaderboard.Size = new System.Drawing.Size(263, 71);
+            this.btnLeaderboard.Size = new System.Drawing.Size(261, 71);
             this.btnLeaderboard.TabIndex = 5;
             this.btnLeaderboard.Text = "Leaderboard";
             this.btnLeaderboard.UseVisualStyleBackColor = true;
@@ -114,7 +116,7 @@
             this.Controls.Add(this.btnRulebook);
             this.Controls.Add(this.btnNewGame);
             this.Controls.Add(this.lblTitle);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmTitle";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
