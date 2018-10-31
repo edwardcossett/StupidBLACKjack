@@ -48,7 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\BlackjackDealer.cs" />
     <Compile Include="Code\BlackjackPlayer.cs" />
+    <Compile Include="FrmWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWin.Designer.cs">
+      <DependentUpon>FrmWin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLose.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +82,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmWin.resx">
+      <DependentUpon>FrmWin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLose.resx">
       <DependentUpon>FrmLose.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,6 +324,8 @@
   <ItemGroup>
     <None Include="Resources\red_joker.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\back_of_card.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
