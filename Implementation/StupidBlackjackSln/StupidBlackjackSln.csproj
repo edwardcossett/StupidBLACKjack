@@ -49,6 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\BlackjackPlayer.cs" />
+    <Compile Include="FrmLeaderboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLeaderboard.Designer.cs">
+      <DependentUpon>FrmLeaderboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTitle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmLeaderboard.resx">
+      <DependentUpon>FrmLeaderboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmNewGame.resx">
       <DependentUpon>FrmNewGame.cs</DependentUpon>
     </EmbeddedResource>

@@ -34,5 +34,11 @@ namespace StupidBlackjackSln {
       frmNewGame.Show();
       this.Hide();
     }
-  }
+
+        private void btnLeaderboard_Click(object sender, EventArgs e)
+        {
+            FrmLeaderboard leaderboard = new FrmLeaderboard();
+            leaderboard.Show();
+        }
+    }
 }
