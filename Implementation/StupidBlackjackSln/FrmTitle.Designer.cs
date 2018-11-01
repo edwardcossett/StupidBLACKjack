@@ -128,7 +128,7 @@
     #endregion
 
     private System.Windows.Forms.Label lblTitle;
-    private System.Windows.Forms.Button btnNewGame1;
+    private System.Windows.Forms.Button btnNewGame;
     private System.Windows.Forms.Button btnRulebook;
     private System.Windows.Forms.Button btnExitGame;
     private System.Windows.Forms.Button btnOptions;
