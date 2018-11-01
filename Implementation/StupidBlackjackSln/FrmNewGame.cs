@@ -85,7 +85,7 @@ namespace StupidBlackjackSln {
                 frmWin.Show();
                 this.Hide();
             }
-            if (player1.Score <= dealer1.Score)
+            else if (player1.Score <= dealer1.Score)
             {
                 FrmLose frmLose = new FrmLose();
                 frmLose.Show();
