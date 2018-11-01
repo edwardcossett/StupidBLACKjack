@@ -29,6 +29,8 @@
             this.btnExitGame = new System.Windows.Forms.Button();
             this.btnOptions = new System.Windows.Forms.Button();
             this.btnLeaderboard = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblNameMarker = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -103,6 +105,26 @@
             this.btnLeaderboard.UseVisualStyleBackColor = true;
             this.btnLeaderboard.Click += new System.EventHandler(this.btnLeaderboard_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBox1.Location = new System.Drawing.Point(151, 9);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(138, 26);
+            this.textBox1.TabIndex = 6;
+            // 
+            // lblNameMarker
+            // 
+            this.lblNameMarker.AutoSize = true;
+            this.lblNameMarker.BackColor = System.Drawing.Color.White;
+            this.lblNameMarker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameMarker.Location = new System.Drawing.Point(18, 12);
+            this.lblNameMarker.Name = "lblNameMarker";
+            this.lblNameMarker.Size = new System.Drawing.Size(115, 22);
+            this.lblNameMarker.TabIndex = 7;
+            this.lblNameMarker.Text = "User Name:";
+            this.lblNameMarker.Click += new System.EventHandler(this.label1_Click);
+            // 
             // frmTitle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -110,6 +132,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.BackgroundImage = global::StupidBlackjackSln.Properties.Resources.table_texture;
             this.ClientSize = new System.Drawing.Size(1271, 554);
+            this.Controls.Add(this.lblNameMarker);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnLeaderboard);
             this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.btnExitGame);
@@ -133,6 +157,8 @@
     private System.Windows.Forms.Button btnExitGame;
     private System.Windows.Forms.Button btnOptions;
         private System.Windows.Forms.Button btnLeaderboard;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblNameMarker;
     }
 }
 
