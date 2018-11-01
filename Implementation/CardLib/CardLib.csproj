@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Code\Card.cs" />
     <Compile Include="Code\Deck.cs" />
+    <Compile Include="Code\Dealer.cs" />
     <Compile Include="Code\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
