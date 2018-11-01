@@ -65,7 +65,7 @@ namespace StupidBlackjackSln {
             System.Threading.Thread.Sleep(200);
             if (player1.Score > 21)
             {
-                DialogResult result = MessageBox.Show("You Lose!", "You Lose! Start New Game?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     startNewGame();
@@ -90,7 +90,7 @@ namespace StupidBlackjackSln {
             }
             if (dealer1.Score > 21)
             {
-                DialogResult result = MessageBox.Show("You Win!", "You Win! Start New Game?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("You Win! Start New Game?", "You Win!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     startNewGame();
@@ -104,7 +104,7 @@ namespace StupidBlackjackSln {
             }
             else if (player1.Score <= dealer1.Score)
             {
-                DialogResult result = MessageBox.Show("You Lose!", "You Lose! Start New Game?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     startNewGame();
@@ -118,7 +118,7 @@ namespace StupidBlackjackSln {
             }
             else
             {
-                DialogResult result = MessageBox.Show("You Win!", "You Win! Start New Game?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("You Win! Start New Game?", "You Win!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     startNewGame();
