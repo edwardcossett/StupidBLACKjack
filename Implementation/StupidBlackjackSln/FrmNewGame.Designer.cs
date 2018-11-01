@@ -101,7 +101,7 @@
             // btnHit
             // 
             this.btnHit.AutoSize = true;
-            this.btnHit.Location = new System.Drawing.Point(339, 228);
+            this.btnHit.Location = new System.Drawing.Point(149, 237);
             this.btnHit.Margin = new System.Windows.Forms.Padding(4);
             this.btnHit.Name = "btnHit";
             this.btnHit.Size = new System.Drawing.Size(40, 28);
@@ -113,7 +113,7 @@
             // btnStand
             // 
             this.btnStand.AutoSize = true;
-            this.btnStand.Location = new System.Drawing.Point(409, 228);
+            this.btnStand.Location = new System.Drawing.Point(219, 237);
             this.btnStand.Margin = new System.Windows.Forms.Padding(4);
             this.btnStand.Name = "btnStand";
             this.btnStand.Size = new System.Drawing.Size(71, 28);
@@ -126,7 +126,7 @@
             // 
             this.lblPlayerScore.AutoSize = true;
             this.lblPlayerScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayerScore.Location = new System.Drawing.Point(537, 219);
+            this.lblPlayerScore.Location = new System.Drawing.Point(331, 219);
             this.lblPlayerScore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPlayerScore.Name = "lblPlayerScore";
             this.lblPlayerScore.Size = new System.Drawing.Size(132, 46);

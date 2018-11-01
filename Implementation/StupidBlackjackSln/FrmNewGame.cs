@@ -22,6 +22,7 @@ namespace StupidBlackjackSln {
       InitializeComponent();
       picPlayerCards = new PictureBox[5];
       picDealerCards = new PictureBox[5];
+      
       for (int i = 0; i < 5; i++) {
         Console.WriteLine(i);
         picPlayerCards[i] = Controls.Find("picPlayerCard" + (i + 1).ToString(), true)[0] as PictureBox;
@@ -64,9 +65,17 @@ namespace StupidBlackjackSln {
             System.Threading.Thread.Sleep(200);
             if (player1.Score > 21)
             {
-                FrmLose frmLose = new FrmLose();
-                frmLose.Show();
-                this.Hide();
+                DialogResult result = MessageBox.Show("You Lose!", "You Lose! Start New Game?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    startNewGame();
+                }
+                else
+                {
+                    frmTitle frmTitle = new frmTitle();
+                    frmTitle.Show();
+                    this.Hide();
+                }
             }
     }
 
@@ -81,22 +90,67 @@ namespace StupidBlackjackSln {
             }
             if (dealer1.Score > 21)
             {
-                FrmWin frmWin = new FrmWin();
-                frmWin.Show();
-                this.Hide();
+                DialogResult result = MessageBox.Show("You Win!", "You Win! Start New Game?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    startNewGame();
+                }
+                else
+                {
+                    frmTitle frmTitle = new frmTitle();
+                    frmTitle.Show();
+                    this.Hide();
+                }
             }
             else if (player1.Score <= dealer1.Score)
             {
-                FrmLose frmLose = new FrmLose();
-                frmLose.Show();
-                this.Hide();
+                DialogResult result = MessageBox.Show("You Lose!", "You Lose! Start New Game?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    startNewGame();
+                }
+                else
+                {
+                    frmTitle frmTitle = new frmTitle();
+                    frmTitle.Show();
+                    this.Hide();
+                }
             }
             else
             {
-                FrmWin frmWin = new FrmWin();
-                frmWin.Show();
-                this.Hide();
+                DialogResult result = MessageBox.Show("You Win!", "You Win! Start New Game?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    startNewGame();
+                }
+                else
+                {
+                    frmTitle frmTitle = new frmTitle();
+                    frmTitle.Show();
+                    this.Hide();
+                }
             }
+        }
+
+    private void startNewGame()
+        {
+            player1.Hand.Clear();
+            dealer1.Hand.Clear();
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine(i);
+                picPlayerCards[i].BackgroundImage = null;
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine(i);
+                picDealerCards[i].BackgroundImage = null;
+            }
+            
+            deck = new Deck(FindBitmap);
+            player1.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard()});
+            dealer1.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard()});
+            showHand();
         }
 
     private Bitmap FindBitmap(string value, string suit) {
