@@ -50,13 +50,11 @@
   <ItemGroup>
     <Compile Include="Code\BlackjackDealer.cs" />
     <Compile Include="Code\BlackjackPlayer.cs" />
-<<<<<<< HEAD
     <Compile Include="FrmLeaderboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmLeaderboard.Designer.cs">
       <DependentUpon>FrmLeaderboard.cs</DependentUpon>
-=======
     <Compile Include="FrmWin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,7 +66,6 @@
     </Compile>
     <Compile Include="FrmLose.Designer.cs">
       <DependentUpon>FrmLose.cs</DependentUpon>
->>>>>>> 3b2fda6fdb8c463e400fcea10c9e4c833172af41
     </Compile>
     <Compile Include="FrmTitle.cs">
       <SubType>Form</SubType>
@@ -90,16 +87,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
     <EmbeddedResource Include="FrmLeaderboard.resx">
       <DependentUpon>FrmLeaderboard.cs</DependentUpon>
-=======
     <EmbeddedResource Include="FrmWin.resx">
       <DependentUpon>FrmWin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLose.resx">
       <DependentUpon>FrmLose.cs</DependentUpon>
->>>>>>> 3b2fda6fdb8c463e400fcea10c9e4c833172af41
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNewGame.resx">
       <DependentUpon>FrmNewGame.cs</DependentUpon>
