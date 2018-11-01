@@ -171,5 +171,7 @@ namespace StupidBlackjackSln {
 
       return (Bitmap)Resources.ResourceManager.GetObject(textName);
     }
-  }
+
+        
+    }
 }
