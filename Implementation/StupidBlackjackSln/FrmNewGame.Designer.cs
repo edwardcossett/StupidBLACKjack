@@ -36,6 +36,8 @@
             this.picDealerCard3 = new System.Windows.Forms.PictureBox();
             this.picDealerCard4 = new System.Windows.Forms.PictureBox();
             this.picDealerCard5 = new System.Windows.Forms.PictureBox();
+            this.lblPlayerName = new System.Windows.Forms.Label();
+            this.lblPlayerStreak = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayerCard3)).BeginInit();
@@ -126,12 +128,13 @@
             // 
             this.lblPlayerScore.AutoSize = true;
             this.lblPlayerScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerScore.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.lblPlayerScore.Location = new System.Drawing.Point(331, 219);
             this.lblPlayerScore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPlayerScore.Name = "lblPlayerScore";
-            this.lblPlayerScore.Size = new System.Drawing.Size(132, 46);
+            this.lblPlayerScore.Size = new System.Drawing.Size(293, 46);
             this.lblPlayerScore.TabIndex = 7;
-            this.lblPlayerScore.Text = "label1";
+            this.lblPlayerScore.Text = "lblPlayerScore";
             // 
             // picDealerCard1
             // 
@@ -183,11 +186,36 @@
             this.picDealerCard5.TabIndex = 12;
             this.picDealerCard5.TabStop = false;
             // 
+            // lblPlayerName
+            // 
+            this.lblPlayerName.AutoSize = true;
+            this.lblPlayerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerName.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblPlayerName.Location = new System.Drawing.Point(4, 298);
+            this.lblPlayerName.Name = "lblPlayerName";
+            this.lblPlayerName.Size = new System.Drawing.Size(138, 25);
+            this.lblPlayerName.TabIndex = 13;
+            this.lblPlayerName.Text = "lblPlayerName";
+            // 
+            // lblPlayerStreak
+            // 
+            this.lblPlayerStreak.AutoSize = true;
+            this.lblPlayerStreak.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerStreak.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lblPlayerStreak.Location = new System.Drawing.Point(6, 334);
+            this.lblPlayerStreak.Name = "lblPlayerStreak";
+            this.lblPlayerStreak.Size = new System.Drawing.Size(133, 24);
+            this.lblPlayerStreak.TabIndex = 14;
+            this.lblPlayerStreak.Text = "lblPlayerStreak";
+            // 
             // FrmNewGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.lblPlayerStreak);
+            this.Controls.Add(this.lblPlayerName);
             this.Controls.Add(this.picDealerCard5);
             this.Controls.Add(this.picDealerCard4);
             this.Controls.Add(this.picDealerCard3);
@@ -236,5 +264,7 @@
         private System.Windows.Forms.PictureBox picDealerCard3;
         private System.Windows.Forms.PictureBox picDealerCard4;
         private System.Windows.Forms.PictureBox picDealerCard5;
+        private System.Windows.Forms.Label lblPlayerName;
+        private System.Windows.Forms.Label lblPlayerStreak;
     }
 }

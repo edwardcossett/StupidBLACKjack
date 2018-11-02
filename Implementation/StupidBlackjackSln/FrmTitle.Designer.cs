@@ -29,7 +29,7 @@
             this.btnExitGame = new System.Windows.Forms.Button();
             this.btnOptions = new System.Windows.Forms.Button();
             this.btnLeaderboard = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
             this.lblNameMarker = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -92,7 +92,6 @@
             this.btnOptions.TabIndex = 4;
             this.btnOptions.Text = "Options";
             this.btnOptions.UseVisualStyleBackColor = true;
-            this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
             // 
             // btnLeaderboard
             // 
@@ -105,13 +104,15 @@
             this.btnLeaderboard.UseVisualStyleBackColor = true;
             this.btnLeaderboard.Click += new System.EventHandler(this.btnLeaderboard_Click);
             // 
-            // textBox1
+            // txtUserName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox1.Location = new System.Drawing.Point(151, 9);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 26);
-            this.textBox1.TabIndex = 6;
+            this.txtUserName.AcceptsTab = true;
+            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtUserName.Location = new System.Drawing.Point(139, 9);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(138, 26);
+            this.txtUserName.TabIndex = 6;
+            this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
             // 
             // lblNameMarker
             // 
@@ -123,7 +124,6 @@
             this.lblNameMarker.Size = new System.Drawing.Size(115, 22);
             this.lblNameMarker.TabIndex = 7;
             this.lblNameMarker.Text = "User Name:";
-            this.lblNameMarker.Click += new System.EventHandler(this.label1_Click);
             // 
             // frmTitle
             // 
@@ -133,7 +133,7 @@
             this.BackgroundImage = global::StupidBlackjackSln.Properties.Resources.table_texture;
             this.ClientSize = new System.Drawing.Size(1271, 554);
             this.Controls.Add(this.lblNameMarker);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.btnLeaderboard);
             this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.btnExitGame);
@@ -157,7 +157,7 @@
     private System.Windows.Forms.Button btnExitGame;
     private System.Windows.Forms.Button btnOptions;
         private System.Windows.Forms.Button btnLeaderboard;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label lblNameMarker;
     }
 }

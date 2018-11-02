@@ -6,15 +6,25 @@ using System.Threading.Tasks;
 
 namespace StupidBlackjackSln.Code {
   class BlackjackPlayer : Player {
-    /// <summary>
-    /// Used to identify players and facilitate the tracking of their data
-    /// </summary>
-    public String Name {
-            get;
-            protected set;
+        private string name;
+
+        /// <summary>
+        /// Used to identify players and facilitate the tracking of their data
+        /// </summary>
+        public string GetName()
+        {
+            return name;
         }
 
-    protected override void calcScore() {
+        /// <summary>
+        /// Used to identify players and facilitate the tracking of their data
+        /// </summary>
+        public void SetName(string value)
+        {
+            name = value;
+        }
+
+        protected override void calcScore() {
       this.Score = 0;
       int numAces = 0;
       foreach (Card card in Hand) {
