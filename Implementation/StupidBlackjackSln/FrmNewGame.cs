@@ -82,6 +82,8 @@ namespace StupidBlackjackSln {
             if (player.Score > 21)
             {
                 streakCounter = 0;
+                DealerTurn = true;
+                showHand();
                 DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
