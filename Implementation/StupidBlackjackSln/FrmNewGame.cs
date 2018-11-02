@@ -18,6 +18,7 @@ namespace StupidBlackjackSln {
     private PictureBox[] picPlayerCards;
     private PictureBox[] picDealerCards;
     private int streakCounter;
+    private bool DealerTurn;
 
     public Dealer Dealer { get => dealer; set => dealer = value; }
     public int StreakCounter { get => streakCounter; set => streakCounter = value; }
@@ -61,6 +62,9 @@ namespace StupidBlackjackSln {
       }
       for (int i = 0; i < dealer.Hand.Count(); i++) {
         picDealerCards[i].BackgroundImage = dealer.Hand[i].Bitmap;
+        if (!DealerTurn && i == 1){
+            picDealerCards[i].BackgroundImage = (Bitmap)Resources.back_of_card;
+        }
       }
       lblPlayerScore.Text = player.Score.ToString();
     }
@@ -94,6 +98,7 @@ namespace StupidBlackjackSln {
 
     private void btnStand_Click(object sender, EventArgs e)
     {
+            DealerTurn = true;
             while (dealer.Score<player.Score && dealer.Score < 17)
             {
                 dealer.giveCard(deck.dealCard());
@@ -150,6 +155,7 @@ namespace StupidBlackjackSln {
 
     private void startNewGame()
         {
+            DealerTurn = false;
             player.Hand.Clear();
             dealer.Hand.Clear();
             for (int i = 0; i < 5; i++)

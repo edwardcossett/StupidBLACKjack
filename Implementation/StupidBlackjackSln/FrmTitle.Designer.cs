@@ -31,6 +31,7 @@
             this.btnLeaderboard = new System.Windows.Forms.Button();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.lblNameMarker = new System.Windows.Forms.Label();
+            this.lblHotlineInfo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -39,20 +40,18 @@
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.lblTitle.Location = new System.Drawing.Point(292, 70);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Location = new System.Drawing.Point(219, 57);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(635, 91);
+            this.lblTitle.Size = new System.Drawing.Size(519, 73);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Stupid Blackjack";
             // 
             // btnNewGame
             // 
             this.btnNewGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewGame.Location = new System.Drawing.Point(13, 418);
-            this.btnNewGame.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNewGame.Location = new System.Drawing.Point(10, 340);
             this.btnNewGame.Name = "btnNewGame";
-            this.btnNewGame.Size = new System.Drawing.Size(233, 71);
+            this.btnNewGame.Size = new System.Drawing.Size(175, 58);
             this.btnNewGame.TabIndex = 1;
             this.btnNewGame.Text = "New Game";
             this.btnNewGame.UseVisualStyleBackColor = true;
@@ -61,10 +60,9 @@
             // btnRulebook
             // 
             this.btnRulebook.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRulebook.Location = new System.Drawing.Point(254, 418);
-            this.btnRulebook.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRulebook.Location = new System.Drawing.Point(190, 340);
             this.btnRulebook.Name = "btnRulebook";
-            this.btnRulebook.Size = new System.Drawing.Size(310, 71);
+            this.btnRulebook.Size = new System.Drawing.Size(232, 58);
             this.btnRulebook.TabIndex = 2;
             this.btnRulebook.Text = "View Rulebook";
             this.btnRulebook.UseVisualStyleBackColor = true;
@@ -73,10 +71,9 @@
             // btnExitGame
             // 
             this.btnExitGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExitGame.Location = new System.Drawing.Point(1019, 418);
-            this.btnExitGame.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExitGame.Location = new System.Drawing.Point(764, 340);
             this.btnExitGame.Name = "btnExitGame";
-            this.btnExitGame.Size = new System.Drawing.Size(220, 71);
+            this.btnExitGame.Size = new System.Drawing.Size(165, 58);
             this.btnExitGame.TabIndex = 3;
             this.btnExitGame.Text = "Exit Game";
             this.btnExitGame.UseVisualStyleBackColor = true;
@@ -85,10 +82,9 @@
             // btnOptions
             // 
             this.btnOptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOptions.Location = new System.Drawing.Point(839, 418);
-            this.btnOptions.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOptions.Location = new System.Drawing.Point(629, 340);
             this.btnOptions.Name = "btnOptions";
-            this.btnOptions.Size = new System.Drawing.Size(172, 71);
+            this.btnOptions.Size = new System.Drawing.Size(129, 58);
             this.btnOptions.TabIndex = 4;
             this.btnOptions.Text = "Options";
             this.btnOptions.UseVisualStyleBackColor = true;
@@ -96,9 +92,10 @@
             // btnLeaderboard
             // 
             this.btnLeaderboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLeaderboard.Location = new System.Drawing.Point(571, 418);
+            this.btnLeaderboard.Location = new System.Drawing.Point(428, 340);
+            this.btnLeaderboard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLeaderboard.Name = "btnLeaderboard";
-            this.btnLeaderboard.Size = new System.Drawing.Size(261, 71);
+            this.btnLeaderboard.Size = new System.Drawing.Size(196, 58);
             this.btnLeaderboard.TabIndex = 5;
             this.btnLeaderboard.Text = "Leaderboard";
             this.btnLeaderboard.UseVisualStyleBackColor = true;
@@ -108,9 +105,10 @@
             // 
             this.txtUserName.AcceptsTab = true;
             this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtUserName.Location = new System.Drawing.Point(139, 9);
+            this.txtUserName.Location = new System.Drawing.Point(104, 7);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(138, 26);
+            this.txtUserName.Size = new System.Drawing.Size(104, 23);
             this.txtUserName.TabIndex = 6;
             this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
             // 
@@ -119,19 +117,33 @@
             this.lblNameMarker.AutoSize = true;
             this.lblNameMarker.BackColor = System.Drawing.Color.White;
             this.lblNameMarker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameMarker.Location = new System.Drawing.Point(18, 12);
+            this.lblNameMarker.Location = new System.Drawing.Point(14, 10);
+            this.lblNameMarker.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNameMarker.Name = "lblNameMarker";
-            this.lblNameMarker.Size = new System.Drawing.Size(115, 22);
+            this.lblNameMarker.Size = new System.Drawing.Size(93, 17);
             this.lblNameMarker.TabIndex = 7;
             this.lblNameMarker.Text = "User Name:";
             // 
+            // lblHotlineInfo
+            // 
+            this.lblHotlineInfo.BackColor = System.Drawing.Color.Transparent;
+            this.lblHotlineInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHotlineInfo.Location = new System.Drawing.Point(6, 403);
+            this.lblHotlineInfo.Name = "lblHotlineInfo";
+            this.lblHotlineInfo.Size = new System.Drawing.Size(941, 45);
+            this.lblHotlineInfo.TabIndex = 8;
+            this.lblHotlineInfo.Text = "Gambling Addiction: Call the Hotline at 1-800-522-4700 or visit gamtalk.org for o" +
+    "nline support";
+            this.lblHotlineInfo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
             // frmTitle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.BackgroundImage = global::StupidBlackjackSln.Properties.Resources.table_texture;
-            this.ClientSize = new System.Drawing.Size(1271, 554);
+            this.ClientSize = new System.Drawing.Size(953, 450);
+            this.Controls.Add(this.lblHotlineInfo);
             this.Controls.Add(this.lblNameMarker);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.btnLeaderboard);
@@ -140,7 +152,6 @@
             this.Controls.Add(this.btnRulebook);
             this.Controls.Add(this.btnNewGame);
             this.Controls.Add(this.lblTitle);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmTitle";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -159,6 +170,7 @@
         private System.Windows.Forms.Button btnLeaderboard;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label lblNameMarker;
+        private System.Windows.Forms.Label lblHotlineInfo;
     }
 }
 
