@@ -15,20 +15,7 @@ namespace StupidBlackjackSln {
       InitializeComponent();
     }
 
-        private String playerName;
-
-        public string GetPlayerName()
-        {
-            return playerName;
-        }
-
-        public void SetPlayerName(string value)
-        {
-            playerName = value;
-        }
-
-        private void Form1_Load(object sender, EventArgs e) {
-            SetPlayerName("???");
+    private void Form1_Load(object sender, EventArgs e) {
     }
 
     private void btnRulebook_Click(object sender, EventArgs e) {
@@ -43,22 +30,9 @@ namespace StupidBlackjackSln {
     }
 
     private void btnNewGame_Click(object sender, EventArgs e) {
-      FrmNewGame frmNewGame = new FrmNewGame(GetPlayerName());
+      FrmNewGame frmNewGame = new FrmNewGame();
       frmNewGame.Show();
       this.Hide();
     }
-
-    private void btnLeaderboard_Click(object sender, EventArgs e) {
-      FrmLeaderboard leaderboard = new FrmLeaderboard();
-      leaderboard.Show();
-    }
-
-        private void txtUserName_TextChanged(object sender, EventArgs e)
-        {
-            if (txtUserName.Text == "")
-                SetPlayerName("???");
-            else
-                SetPlayerName(txtUserName.Text);
-        }
-    }
+  }
 }

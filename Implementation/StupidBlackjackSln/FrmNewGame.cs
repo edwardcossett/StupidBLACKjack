@@ -13,29 +13,16 @@ using System.Windows.Forms;
 namespace StupidBlackjackSln {
   public partial class FrmNewGame : Form {
     private Deck deck;
-    private BlackjackPlayer player;
-    private Dealer dealer;
+    private Player player1;
+    private Dealer dealer1;
     private PictureBox[] picPlayerCards;
     private PictureBox[] picDealerCards;
-    private int streakCounter;
+    private Boolean dealerTurn = false;
 
-    public Dealer Dealer { get => dealer; set => dealer = value; }
-    public int StreakCounter { get => streakCounter; set => streakCounter = value; }
-
-    public FrmNewGame(string playerName) {
+    public FrmNewGame() {
       InitializeComponent();
-
       picPlayerCards = new PictureBox[5];
       picDealerCards = new PictureBox[5];
-
-      player = new BlackjackPlayer();
-      lblPlayerName.Text = playerName;
-      streakCounter = 0;
-
-      player.SetName(playerName);
-      
-      dealer = new BlackjackDealer();
-
       for (int i = 0; i < 5; i++) {
         Console.WriteLine(i);
         picPlayerCards[i] = Controls.Find("picPlayerCard" + (i + 1).ToString(), true)[0] as PictureBox;
@@ -48,21 +35,25 @@ namespace StupidBlackjackSln {
 
     private void FrmNewGame_Load(object sender, EventArgs e) {
       deck = new Deck(FindBitmap);
-
-      lblPlayerStreak.Text = streakCounter.ToString();
-      player.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
-      dealer.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
+      player1 = new BlackjackPlayer();
+      dealer1 = new BlackjackDealer();
+      
+      player1.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
+      dealer1.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
       showHand();
     }
 
     private void showHand() {
-      for (int i = 0; i < player.Hand.Count(); i++) {
-        picPlayerCards[i].BackgroundImage = player.Hand[i].Bitmap;
+      for (int i = 0; i < player1.Hand.Count(); i++) {
+        picPlayerCards[i].BackgroundImage = player1.Hand[i].Bitmap;
       }
-      for (int i = 0; i < dealer.Hand.Count(); i++) {
-        picDealerCards[i].BackgroundImage = dealer.Hand[i].Bitmap;
+      for (int i = 0; i < dealer1.Hand.Count(); i++) {
+        picDealerCards[i].BackgroundImage = dealer1.Hand[i].Bitmap;
+        if(!dealerTurn && i == 1){
+            picDealerCards[i].BackgroundImage = FindBitmap("back_of_card", "");
+        }
       }
-      lblPlayerScore.Text = player.Score.ToString();
+      lblPlayerScore.Text = player1.Score.ToString();
     }
 
     private void FrmNewGame_FormClosed(object sender, FormClosedEventArgs e) {
@@ -72,113 +63,56 @@ namespace StupidBlackjackSln {
     }
 
     private void btnHit_Click(object sender, EventArgs e) {
-      player.giveCard(deck.dealCard());
+      player1.giveCard(deck.dealCard());
       showHand();
             System.Threading.Thread.Sleep(200);
-            if (player.Score > 21)
+            if (player1.Score > 21)
             {
-                streakCounter = 0;
-                DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result == DialogResult.Yes)
-                {
-                    startNewGame();
-                }
-                else
-                {
-                    frmTitle frmTitle = new frmTitle();
-                    frmTitle.Show();
-                    this.Hide();
-                }
+                FrmLose frmLose = new FrmLose();
+                frmLose.Show();
+                this.Hide();
             }
     }
 
     private void btnStand_Click(object sender, EventArgs e)
     {
-            while (dealer.Score<player.Score && dealer.Score < 17)
+            dealerTurn = true;
+            showHand();
+            while (dealer1.Score<player1.Score && dealer1.Score < 17)
             {
-                dealer.giveCard(deck.dealCard());
+                dealer1.giveCard(deck.dealCard());
                 showHand();
                 System.Threading.Thread.Sleep(500);
                 
             }
-            if (dealer.Score > 21)
+            if (dealer1.Score > 21)
             {
-                streakCounter += 1;
-                DialogResult result = MessageBox.Show("You Win! Start New Game?", "You Win!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result == DialogResult.Yes)
-                {
-                    startNewGame();
-                }
-                else
-                {
-                    frmTitle frmTitle = new frmTitle();
-                    frmTitle.Show();
-                    this.Hide();
-                }
+                FrmWin frmWin = new FrmWin();
+                frmWin.Show();
+                this.Hide();
             }
-            else if (player.Score <= dealer.Score)
+            else if (player1.Score <= dealer1.Score)
             {
-                streakCounter = 0;
-                DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result == DialogResult.Yes)
-                {
-                    startNewGame();
-                }
-                else
-                {
-                    frmTitle frmTitle = new frmTitle();
-                    frmTitle.Show();
-                    this.Hide();
-                }
+                FrmLose frmLose = new FrmLose();
+                frmLose.Show();
+                this.Hide();
             }
             else
             {
-                streakCounter += 1;
-                DialogResult result = MessageBox.Show("You Win! Start New Game?", "You Win!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result == DialogResult.Yes)
-                {
-                    startNewGame();
-                }
-                else
-                {
-                    frmTitle frmTitle = new frmTitle();
-                    frmTitle.Show();
-                    this.Hide();
-                }
+                FrmWin frmWin = new FrmWin();
+                frmWin.Show();
+                this.Hide();
             }
-        }
-
-    private void startNewGame()
-        {
-            player.Hand.Clear();
-            dealer.Hand.Clear();
-            for (int i = 0; i < 5; i++)
-            {
-                Console.WriteLine(i);
-                picPlayerCards[i].BackgroundImage = null;
-            }
-            for (int i = 0; i < 5; i++)
-            {
-                Console.WriteLine(i);
-                picDealerCards[i].BackgroundImage = null;
-            }
-
-            lblPlayerStreak.Text = streakCounter.ToString();
-            deck = new Deck(FindBitmap);
-            player.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard()});
-            dealer.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard()});
-            showHand();
         }
 
     private Bitmap FindBitmap(string value, string suit) {
       string textName = "";
       int valueAsNum;
-            if (value == "back_of_card")
-            {
-                return (Bitmap)Resources.ResourceManager.GetObject(value);
-
-            }
-      if (int.TryParse(value, out valueAsNum)) {
+      if (value == "back_of_card")
+      {
+        return (Bitmap) Resources.ResourceManager.GetObject(value);
+      }
+      else if (int.TryParse(value, out valueAsNum)) {
         textName += "_";
       }
 
@@ -186,9 +120,7 @@ namespace StupidBlackjackSln {
       textName += "_of_";
       textName += suit;
 
-      return (Bitmap)Resources.ResourceManager.GetObject(textName);
+      return (Bitmap) Resources.ResourceManager.GetObject(textName);
     }
-
-        
-    }
+  }
 }

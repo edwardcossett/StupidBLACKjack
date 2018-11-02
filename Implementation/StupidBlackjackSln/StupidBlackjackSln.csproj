@@ -50,11 +50,17 @@
   <ItemGroup>
     <Compile Include="Code\BlackjackDealer.cs" />
     <Compile Include="Code\BlackjackPlayer.cs" />
-    <Compile Include="FrmLeaderboard.cs">
+    <Compile Include="FrmWin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmLeaderboard.Designer.cs">
-      <DependentUpon>FrmLeaderboard.cs</DependentUpon>
+    <Compile Include="FrmWin.Designer.cs">
+      <DependentUpon>FrmWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLose.Designer.cs">
+      <DependentUpon>FrmLose.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTitle.cs">
       <SubType>Form</SubType>
@@ -76,8 +82,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmLeaderboard.resx">
-      <DependentUpon>FrmLeaderboard.cs</DependentUpon>
+    <EmbeddedResource Include="FrmWin.resx">
+      <DependentUpon>FrmWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLose.resx">
+      <DependentUpon>FrmLose.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNewGame.resx">
       <DependentUpon>FrmNewGame.cs</DependentUpon>
@@ -98,7 +107,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Properties\DataSources\frmTitle.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
