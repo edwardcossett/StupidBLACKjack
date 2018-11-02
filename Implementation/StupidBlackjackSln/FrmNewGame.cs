@@ -30,7 +30,7 @@ namespace StupidBlackjackSln {
       picDealerCards = new PictureBox[5];
 
       player = new BlackjackPlayer();
-      lblPlayerName.Text = playerName;
+      lblPlayerName.Text = "Name = " + playerName;
       streakCounter = 0;
 
       player.SetName(playerName);
@@ -50,7 +50,7 @@ namespace StupidBlackjackSln {
     private void FrmNewGame_Load(object sender, EventArgs e) {
       deck = new Deck(FindBitmap);
 
-      lblPlayerStreak.Text = streakCounter.ToString();
+      lblPlayerStreak.Text = "Streak = " + streakCounter.ToString();
       player.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
       dealer.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
       showHand();
@@ -66,7 +66,7 @@ namespace StupidBlackjackSln {
             picDealerCards[i].BackgroundImage = (Bitmap)Resources.back_of_card;
         }
       }
-      lblPlayerScore.Text = player.Score.ToString();
+      lblPlayerScore.Text = "Score = " + player.Score.ToString();
     }
 
     private void FrmNewGame_FormClosed(object sender, FormClosedEventArgs e) {
@@ -172,7 +172,7 @@ namespace StupidBlackjackSln {
                 picDealerCards[i].BackgroundImage = null;
             }
 
-            lblPlayerStreak.Text = streakCounter.ToString();
+            lblPlayerStreak.Text = "Streak = " + streakCounter.ToString();
             deck = new Deck(FindBitmap);
             player.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard()});
             dealer.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard()});
@@ -198,6 +198,9 @@ namespace StupidBlackjackSln {
       return (Bitmap)Resources.ResourceManager.GetObject(textName);
     }
 
-        
+        private void lblPlayerName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

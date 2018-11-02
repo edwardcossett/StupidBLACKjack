@@ -60,5 +60,10 @@ namespace StupidBlackjackSln {
             else
                 SetPlayerName(txtUserName.Text);
         }
+
+        private void lblNameMarker_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
