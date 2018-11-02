@@ -99,6 +99,7 @@ namespace StupidBlackjackSln {
     private void btnStand_Click(object sender, EventArgs e)
     {
             DealerTurn = true;
+            showHand();
             while (dealer.Score<player.Score && dealer.Score < 17)
             {
                 dealer.giveCard(deck.dealCard());
