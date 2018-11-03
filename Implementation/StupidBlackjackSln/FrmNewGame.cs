@@ -18,6 +18,7 @@ namespace StupidBlackjackSln {
     private PictureBox[] picPlayerCards;
     private PictureBox[] picDealerCards;
     private int streakCounter;
+    private bool DealerTurn;
 
     public Dealer Dealer { get => dealer; set => dealer = value; }
     public int StreakCounter { get => streakCounter; set => streakCounter = value; }
@@ -29,7 +30,7 @@ namespace StupidBlackjackSln {
       picDealerCards = new PictureBox[5];
 
       player = new BlackjackPlayer();
-      lblPlayerName.Text = playerName;
+      lblPlayerName.Text = "Name = " + playerName;
       streakCounter = 0;
 
       player.SetName(playerName);
@@ -49,7 +50,7 @@ namespace StupidBlackjackSln {
     private void FrmNewGame_Load(object sender, EventArgs e) {
       deck = new Deck(FindBitmap);
 
-      lblPlayerStreak.Text = streakCounter.ToString();
+      lblPlayerStreak.Text = "Streak = " + streakCounter.ToString();
       player.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
       dealer.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
       showHand();
@@ -61,8 +62,11 @@ namespace StupidBlackjackSln {
       }
       for (int i = 0; i < dealer.Hand.Count(); i++) {
         picDealerCards[i].BackgroundImage = dealer.Hand[i].Bitmap;
+        if (!DealerTurn && i == 1){
+            picDealerCards[i].BackgroundImage = (Bitmap)Resources.back_of_card;
+        }
       }
-      lblPlayerScore.Text = player.Score.ToString();
+      lblPlayerScore.Text = "Score = " + player.Score.ToString();
       if(player.Hand.Count()==5 && player.Score <= 21)
             {
                 DialogResult result = MessageBox.Show("You Win! Start New Game?", "You Win!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -92,6 +96,8 @@ namespace StupidBlackjackSln {
             if (player.Score > 21)
             {
                 streakCounter = 0;
+                DealerTurn = true;
+                showHand();
                 DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
@@ -108,6 +114,8 @@ namespace StupidBlackjackSln {
 
     private void btnStand_Click(object sender, EventArgs e)
     {
+            DealerTurn = true;
+            showHand();
             while (dealer.Score<player.Score && dealer.Score < 17)
             {
                 dealer.giveCard(deck.dealCard());
@@ -164,6 +172,7 @@ namespace StupidBlackjackSln {
 
     private void startNewGame()
         {
+            DealerTurn = false;
             player.Hand.Clear();
             dealer.Hand.Clear();
             for (int i = 0; i < 5; i++)
@@ -177,7 +186,7 @@ namespace StupidBlackjackSln {
                 picDealerCards[i].BackgroundImage = null;
             }
 
-            lblPlayerStreak.Text = streakCounter.ToString();
+            lblPlayerStreak.Text = "Streak = " + streakCounter.ToString();
             deck = new Deck(FindBitmap);
             player.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard()});
             dealer.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard()});
@@ -203,6 +212,9 @@ namespace StupidBlackjackSln {
       return (Bitmap)Resources.ResourceManager.GetObject(textName);
     }
 
-        
+        private void lblPlayerName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

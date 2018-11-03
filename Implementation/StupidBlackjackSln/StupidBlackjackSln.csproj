@@ -318,6 +318,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\back_of_card.png" />
+    <None Include="Resources\blackjackTitle.jpg" />
+    <None Include="Resources\BlackJackTable.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

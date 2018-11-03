@@ -473,9 +473,39 @@ namespace StupidBlackjackSln.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back_of_card {
+            get {
+                object obj = ResourceManager.GetObject("back_of_card", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap black_joker {
             get {
                 object obj = ResourceManager.GetObject("black_joker", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BlackJackTable {
+            get {
+                object obj = ResourceManager.GetObject("BlackJackTable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap blackjackTitle {
+            get {
+                object obj = ResourceManager.GetObject("blackjackTitle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
