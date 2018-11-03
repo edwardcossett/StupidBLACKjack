@@ -1,4 +1,4 @@
-﻿using StupidBlackjackSln.Code;
+using StupidBlackjackSln.Code;
 using StupidBlackjackSln.Properties;
 using System;
 using System.Collections.Generic;

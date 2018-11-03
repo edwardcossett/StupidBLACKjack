@@ -23,6 +23,7 @@
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNewGame));
             this.btnHit = new System.Windows.Forms.Button();
             this.btnStand = new System.Windows.Forms.Button();
             this.lblPlayerScore = new System.Windows.Forms.Label();
@@ -234,8 +235,9 @@
             this.Controls.Add(this.picPlayerCard3);
             this.Controls.Add(this.picPlayerCard2);
             this.Controls.Add(this.picPlayerCard1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmNewGame";
-            this.Text = "FrmNewGame";
+            this.Text = "Stupid BlackJack";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmNewGame_FormClosed);
             this.Load += new System.EventHandler(this.FrmNewGame_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picDealerCard5)).EndInit();
