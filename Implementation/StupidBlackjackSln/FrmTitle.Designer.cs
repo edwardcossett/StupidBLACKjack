@@ -23,6 +23,7 @@
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTitle));
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnNewGame = new System.Windows.Forms.Button();
             this.btnRulebook = new System.Windows.Forms.Button();
@@ -159,6 +160,7 @@
             this.Controls.Add(this.btnRulebook);
             this.Controls.Add(this.btnNewGame);
             this.Controls.Add(this.lblTitle);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTitle";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
