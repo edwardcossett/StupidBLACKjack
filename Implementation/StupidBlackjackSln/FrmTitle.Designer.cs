@@ -160,9 +160,10 @@
             this.Controls.Add(this.btnRulebook);
             this.Controls.Add(this.btnNewGame);
             this.Controls.Add(this.lblTitle);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTitle";
-            this.Text = "Form1";
+            this.Text = "Stupid BlackJack";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -115,7 +115,7 @@
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmRulebook";
-            this.Text = "frmRulebook";
+            this.Text = "Rulebook";
             this.ResumeLayout(false);
             this.PerformLayout();
 

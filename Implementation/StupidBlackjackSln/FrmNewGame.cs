@@ -67,6 +67,20 @@ namespace StupidBlackjackSln {
         }
       }
       lblPlayerScore.Text = "Score = " + player.Score.ToString();
+      if(player.Hand.Count()==5 && player.Score <= 21)
+            {
+                DialogResult result = MessageBox.Show("You Win! Start New Game?", "You Win!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    startNewGame();
+                }
+                else
+                {
+                    frmTitle frmTitle = new frmTitle();
+                    frmTitle.Show();
+                    this.Hide();
+                }
+            }
     }
 
     private void FrmNewGame_FormClosed(object sender, FormClosedEventArgs e) {
