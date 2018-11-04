@@ -191,7 +191,7 @@
             this.lblPlayerName.AutoSize = true;
             this.lblPlayerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayerName.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lblPlayerName.Location = new System.Drawing.Point(4, 298);
+            this.lblPlayerName.Location = new System.Drawing.Point(1, 483);
             this.lblPlayerName.Name = "lblPlayerName";
             this.lblPlayerName.Size = new System.Drawing.Size(138, 25);
             this.lblPlayerName.TabIndex = 13;
@@ -202,7 +202,7 @@
             this.lblPlayerStreak.AutoSize = true;
             this.lblPlayerStreak.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayerStreak.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lblPlayerStreak.Location = new System.Drawing.Point(6, 334);
+            this.lblPlayerStreak.Location = new System.Drawing.Point(2, 508);
             this.lblPlayerStreak.Name = "lblPlayerStreak";
             this.lblPlayerStreak.Size = new System.Drawing.Size(133, 24);
             this.lblPlayerStreak.TabIndex = 14;

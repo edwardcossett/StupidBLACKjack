@@ -30,18 +30,18 @@
         {
             this.btnExit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblNameTitle = new System.Windows.Forms.Label();
             this.lblName1 = new System.Windows.Forms.Label();
-            this.lblStreak1 = new System.Windows.Forms.Label();
             this.lblName2 = new System.Windows.Forms.Label();
             this.lblName3 = new System.Windows.Forms.Label();
             this.lblName4 = new System.Windows.Forms.Label();
             this.lblName5 = new System.Windows.Forms.Label();
-            this.lblStreak2 = new System.Windows.Forms.Label();
-            this.lblStreak3 = new System.Windows.Forms.Label();
-            this.lblStreak4 = new System.Windows.Forms.Label();
             this.lblStreak5 = new System.Windows.Forms.Label();
+            this.lblStreak4 = new System.Windows.Forms.Label();
+            this.lblStreak3 = new System.Windows.Forms.Label();
+            this.lblStreak2 = new System.Windows.Forms.Label();
+            this.lblStreak1 = new System.Windows.Forms.Label();
             this.lblStreakTitle = new System.Windows.Forms.Label();
-            this.lblNameTitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +55,7 @@
             this.btnExit.TabIndex = 0;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.button1_Click);
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -86,32 +86,31 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(372, 306);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
+            // lblNameTitle
+            // 
+            this.lblNameTitle.AutoSize = true;
+            this.lblNameTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameTitle.Location = new System.Drawing.Point(3, 0);
+            this.lblNameTitle.Name = "lblNameTitle";
+            this.lblNameTitle.Size = new System.Drawing.Size(92, 36);
+            this.lblNameTitle.TabIndex = 2;
+            this.lblNameTitle.Text = "Name";
+            // 
             // lblName1
             // 
             this.lblName1.AutoSize = true;
             this.lblName1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName1.Location = new System.Drawing.Point(3, 51);
+            this.lblName1.Location = new System.Drawing.Point(3, 50);
             this.lblName1.Name = "lblName1";
             this.lblName1.Size = new System.Drawing.Size(109, 36);
             this.lblName1.TabIndex = 0;
             this.lblName1.Text = "Name1";
-            this.lblName1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // lblStreak1
-            // 
-            this.lblStreak1.AutoSize = true;
-            this.lblStreak1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStreak1.Location = new System.Drawing.Point(189, 51);
-            this.lblStreak1.Name = "lblStreak1";
-            this.lblStreak1.Size = new System.Drawing.Size(117, 36);
-            this.lblStreak1.TabIndex = 1;
-            this.lblStreak1.Text = "Streak1";
             // 
             // lblName2
             // 
             this.lblName2.AutoSize = true;
             this.lblName2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName2.Location = new System.Drawing.Point(3, 102);
+            this.lblName2.Location = new System.Drawing.Point(3, 100);
             this.lblName2.Name = "lblName2";
             this.lblName2.Size = new System.Drawing.Size(109, 36);
             this.lblName2.TabIndex = 2;
@@ -121,7 +120,7 @@
             // 
             this.lblName3.AutoSize = true;
             this.lblName3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName3.Location = new System.Drawing.Point(3, 153);
+            this.lblName3.Location = new System.Drawing.Point(3, 150);
             this.lblName3.Name = "lblName3";
             this.lblName3.Size = new System.Drawing.Size(109, 36);
             this.lblName3.TabIndex = 4;
@@ -131,7 +130,7 @@
             // 
             this.lblName4.AutoSize = true;
             this.lblName4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName4.Location = new System.Drawing.Point(3, 204);
+            this.lblName4.Location = new System.Drawing.Point(3, 200);
             this.lblName4.Name = "lblName4";
             this.lblName4.Size = new System.Drawing.Size(109, 36);
             this.lblName4.TabIndex = 6;
@@ -141,51 +140,61 @@
             // 
             this.lblName5.AutoSize = true;
             this.lblName5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName5.Location = new System.Drawing.Point(3, 255);
+            this.lblName5.Location = new System.Drawing.Point(3, 250);
             this.lblName5.Name = "lblName5";
             this.lblName5.Size = new System.Drawing.Size(109, 36);
             this.lblName5.TabIndex = 8;
             this.lblName5.Text = "Name5";
             // 
-            // lblStreak2
+            // lblStreak5
             // 
-            this.lblStreak2.AutoSize = true;
-            this.lblStreak2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStreak2.Location = new System.Drawing.Point(189, 102);
-            this.lblStreak2.Name = "lblStreak2";
-            this.lblStreak2.Size = new System.Drawing.Size(117, 36);
-            this.lblStreak2.TabIndex = 9;
-            this.lblStreak2.Text = "Streak2";
-            // 
-            // lblStreak3
-            // 
-            this.lblStreak3.AutoSize = true;
-            this.lblStreak3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStreak3.Location = new System.Drawing.Point(189, 153);
-            this.lblStreak3.Name = "lblStreak3";
-            this.lblStreak3.Size = new System.Drawing.Size(117, 36);
-            this.lblStreak3.TabIndex = 10;
-            this.lblStreak3.Text = "Streak3";
+            this.lblStreak5.AutoSize = true;
+            this.lblStreak5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStreak5.Location = new System.Drawing.Point(189, 250);
+            this.lblStreak5.Name = "lblStreak5";
+            this.lblStreak5.Size = new System.Drawing.Size(117, 36);
+            this.lblStreak5.TabIndex = 12;
+            this.lblStreak5.Text = "Streak5";
             // 
             // lblStreak4
             // 
             this.lblStreak4.AutoSize = true;
             this.lblStreak4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStreak4.Location = new System.Drawing.Point(189, 204);
+            this.lblStreak4.Location = new System.Drawing.Point(189, 200);
             this.lblStreak4.Name = "lblStreak4";
             this.lblStreak4.Size = new System.Drawing.Size(117, 36);
             this.lblStreak4.TabIndex = 11;
             this.lblStreak4.Text = "Streak4";
             // 
-            // lblStreak5
+            // lblStreak3
             // 
-            this.lblStreak5.AutoSize = true;
-            this.lblStreak5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStreak5.Location = new System.Drawing.Point(189, 255);
-            this.lblStreak5.Name = "lblStreak5";
-            this.lblStreak5.Size = new System.Drawing.Size(117, 36);
-            this.lblStreak5.TabIndex = 12;
-            this.lblStreak5.Text = "Streak5";
+            this.lblStreak3.AutoSize = true;
+            this.lblStreak3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStreak3.Location = new System.Drawing.Point(189, 150);
+            this.lblStreak3.Name = "lblStreak3";
+            this.lblStreak3.Size = new System.Drawing.Size(117, 36);
+            this.lblStreak3.TabIndex = 10;
+            this.lblStreak3.Text = "Streak3";
+            // 
+            // lblStreak2
+            // 
+            this.lblStreak2.AutoSize = true;
+            this.lblStreak2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStreak2.Location = new System.Drawing.Point(189, 100);
+            this.lblStreak2.Name = "lblStreak2";
+            this.lblStreak2.Size = new System.Drawing.Size(117, 36);
+            this.lblStreak2.TabIndex = 9;
+            this.lblStreak2.Text = "Streak2";
+            // 
+            // lblStreak1
+            // 
+            this.lblStreak1.AutoSize = true;
+            this.lblStreak1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStreak1.Location = new System.Drawing.Point(189, 50);
+            this.lblStreak1.Name = "lblStreak1";
+            this.lblStreak1.Size = new System.Drawing.Size(117, 36);
+            this.lblStreak1.TabIndex = 1;
+            this.lblStreak1.Text = "Streak1";
             // 
             // lblStreakTitle
             // 
@@ -197,16 +206,6 @@
             this.lblStreakTitle.TabIndex = 13;
             this.lblStreakTitle.Text = "Streak";
             // 
-            // lblNameTitle
-            // 
-            this.lblNameTitle.AutoSize = true;
-            this.lblNameTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameTitle.Location = new System.Drawing.Point(3, 0);
-            this.lblNameTitle.Name = "lblNameTitle";
-            this.lblNameTitle.Size = new System.Drawing.Size(92, 36);
-            this.lblNameTitle.TabIndex = 2;
-            this.lblNameTitle.Text = "Name";
-            // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
@@ -216,7 +215,6 @@
             this.lblTitle.Size = new System.Drawing.Size(245, 46);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "Leaderboard";
-            this.lblTitle.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // FrmLeaderboard
             // 
@@ -229,6 +227,7 @@
             this.Controls.Add(this.btnExit);
             this.Name = "FrmLeaderboard";
             this.Text = "Leaderboard";
+            this.Load += new System.EventHandler(this.FrmLeaderboard_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

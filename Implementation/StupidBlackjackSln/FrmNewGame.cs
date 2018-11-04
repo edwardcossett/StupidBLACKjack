@@ -2,16 +2,14 @@
 using StupidBlackjackSln.Properties;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StupidBlackjackSln {
-  public partial class FrmNewGame : Form {
+namespace StupidBlackjackSln
+{
+    public partial class FrmNewGame : Form {
     private Deck deck;
     private BlackjackPlayer player;
     private Dealer dealer;
@@ -74,10 +72,9 @@ namespace StupidBlackjackSln {
     private void btnHit_Click(object sender, EventArgs e) {
       player.giveCard(deck.dealCard());
       showHand();
-            System.Threading.Thread.Sleep(200);
             if (player.Score > 21)
             {
-                streakCounter = 0;
+                lossRoutines();
                 DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
@@ -98,7 +95,6 @@ namespace StupidBlackjackSln {
             {
                 dealer.giveCard(deck.dealCard());
                 showHand();
-                System.Threading.Thread.Sleep(500);
                 
             }
             if (dealer.Score > 21)
@@ -118,7 +114,7 @@ namespace StupidBlackjackSln {
             }
             else if (player.Score <= dealer.Score)
             {
-                streakCounter = 0;
+                lossRoutines();
                 DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
@@ -146,6 +142,39 @@ namespace StupidBlackjackSln {
                     this.Hide();
                 }
             }
+        }
+    private void lossRoutines()
+        {
+            if(!File.Exists("..\\..\\Resources\\input.txt"))
+                File.CreateText("..\\..\\Resources\\input.txt");
+            using (StreamReader input = File.OpenText("..\\..\\Resources\\input.txt"))
+            using (StreamWriter output = new StreamWriter("..\\..\\Resources\\output.txt"))
+            {
+                string line;
+                Boolean found = false;
+                int oldScore;
+                while (null != (line = input.ReadLine()))
+                {
+                    if (!found && line.Contains(lblPlayerName.Text))
+                    {
+                        found = true;
+                        string[] stuff = line.Split(':');
+                        int.TryParse(stuff[1], out oldScore);
+                        if (oldScore < streakCounter)
+                            stuff[1] = streakCounter.ToString();
+                        line = stuff[0] + ':' + stuff[1];
+                    }
+                    output.WriteLine(line);
+                }
+                if (!found)
+                {
+                    line = lblPlayerName.Text + ':' + streakCounter.ToString();
+                    output.WriteLine(line);
+                }
+            }
+            File.Delete("..\\..\\Resources\\input.txt");
+            File.Move("..\\..\\Resources\\output.txt", "..\\..\\Resources\\input.txt");
+            streakCounter = 0;
         }
 
     private void startNewGame()
