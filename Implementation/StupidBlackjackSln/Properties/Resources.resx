@@ -334,4 +334,16 @@
   <data name="BLACKJackIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blackjackicon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CardFlip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\240776__f4ngy__card-flip.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="clack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\370849__cabled-mess__clack-minimal-ui-sounds.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LoseSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\391536__mativve__electro-loose-sound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WinSound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\391539__mativve__electro-win-sound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

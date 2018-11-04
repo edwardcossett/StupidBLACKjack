@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -54,22 +55,28 @@ namespace StupidBlackjackSln {
       player.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
       dealer.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
       showHand();
-    }
+      
+        }
 
     private void showHand() {
+      SoundPlayer flip = new SoundPlayer(Resources.CardFlip);
+      SoundPlayer winning = new SoundPlayer(Resources.WinSound);
       for (int i = 0; i < player.Hand.Count(); i++) {
         picPlayerCards[i].BackgroundImage = player.Hand[i].Bitmap;
+        flip.Play();
       }
       for (int i = 0; i < dealer.Hand.Count(); i++) {
         picDealerCards[i].BackgroundImage = dealer.Hand[i].Bitmap;
         if (!DealerTurn && i == 1){
             picDealerCards[i].BackgroundImage = (Bitmap)Resources.back_of_card;
+            flip.Play();
         }
       }
       lblPlayerScore.Text = "Score = " + player.Score.ToString();
       if(player.Hand.Count()==5 && player.Score <= 21)
             {
-                DialogResult result = MessageBox.Show("You Win! Start New Game?", "You Win!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                winning.Play();
+                DialogResult result = MessageBox.Show("You Win! Start New Game?", "You Win!", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     startNewGame();
@@ -90,6 +97,7 @@ namespace StupidBlackjackSln {
     }
 
     private void btnHit_Click(object sender, EventArgs e) {
+      SoundPlayer losing = new SoundPlayer(Resources.LoseSound);
       player.giveCard(deck.dealCard());
       showHand();
             System.Threading.Thread.Sleep(200);
@@ -98,7 +106,8 @@ namespace StupidBlackjackSln {
                 streakCounter = 0;
                 DealerTurn = true;
                 showHand();
-                DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                losing.Play();
+                DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     startNewGame();
@@ -114,6 +123,8 @@ namespace StupidBlackjackSln {
 
     private void btnStand_Click(object sender, EventArgs e)
     {
+            SoundPlayer winning = new SoundPlayer(Resources.WinSound);
+            SoundPlayer losing = new SoundPlayer(Resources.LoseSound);
             DealerTurn = true;
             showHand();
             while (dealer.Score<player.Score && dealer.Score < 17)
@@ -126,7 +137,8 @@ namespace StupidBlackjackSln {
             if (dealer.Score > 21)
             {
                 streakCounter += 1;
-                DialogResult result = MessageBox.Show("You Win! Start New Game?", "You Win!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                winning.Play();
+                DialogResult result = MessageBox.Show("You Win! Start New Game?", "You Win!", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     startNewGame();
@@ -141,7 +153,8 @@ namespace StupidBlackjackSln {
             else if (player.Score <= dealer.Score)
             {
                 streakCounter = 0;
-                DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                losing.Play();
+                DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     startNewGame();
@@ -156,7 +169,8 @@ namespace StupidBlackjackSln {
             else
             {
                 streakCounter += 1;
-                DialogResult result = MessageBox.Show("You Win! Start New Game?", "You Win!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                winning.Play();
+                DialogResult result = MessageBox.Show("You Win! Start New Game?", "You Win!", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     startNewGame();
@@ -191,8 +205,7 @@ namespace StupidBlackjackSln {
             player.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard()});
             dealer.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard()});
             showHand();
-            System.Media.SoundPlayer simpleSound = new System.Media.SoundPlayer(Properties.Resources.CardFlip.wav);
-            simpleSound.Play();
+            
         }
 
     private Bitmap FindBitmap(string value, string suit) {
