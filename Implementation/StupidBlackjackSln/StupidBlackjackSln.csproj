@@ -317,6 +317,8 @@
     <None Include="Resources\red_joker.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\CardFlip.wav" />
+    <Content Include="Resources\240776__f4ngy__card-flip.wav" />
     <Content Include="Resources\back_of_card.png" />
     <None Include="Resources\BlackJackIcon.png" />
     <None Include="Resources\blackjackicon.ico" />

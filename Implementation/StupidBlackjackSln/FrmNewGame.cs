@@ -191,6 +191,8 @@ namespace StupidBlackjackSln {
             player.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard()});
             dealer.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard()});
             showHand();
+            System.Media.SoundPlayer simpleSound = new System.Media.SoundPlayer(Properties.Resources.CardFlip.wav);
+            simpleSound.Play();
         }
 
     private Bitmap FindBitmap(string value, string suit) {
