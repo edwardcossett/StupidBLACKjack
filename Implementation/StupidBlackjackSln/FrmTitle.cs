@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,23 +33,31 @@ namespace StupidBlackjackSln {
     }
 
     private void btnRulebook_Click(object sender, EventArgs e) {
-      FrmRulebook rulebook = new FrmRulebook();
+     SoundPlayer click = new SoundPlayer(Resources.clack);
+     click.Play();
+     FrmRulebook rulebook = new FrmRulebook();
       rulebook.Show();
     }
 
     private void btnExitGame_Click(object sender, EventArgs e) {
+      SoundPlayer click = new SoundPlayer(Resources.clack);
+      click.Play();
       DialogResult result = MessageBox.Show("Are you sure you want to quit?", "Are you sure?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
       if (result == DialogResult.Yes)
         Application.Exit();
     }
 
     private void btnNewGame_Click(object sender, EventArgs e) {
+      SoundPlayer click = new SoundPlayer(Resources.clack);
+      click.Play();
       FrmNewGame frmNewGame = new FrmNewGame(GetPlayerName());
       frmNewGame.Show();
       this.Hide();
     }
 
     private void btnLeaderboard_Click(object sender, EventArgs e) {
+      SoundPlayer click = new SoundPlayer(Resources.clack);
+      click.Play();
       FrmLeaderboard leaderboard = new FrmLeaderboard();
       leaderboard.Show();
     }

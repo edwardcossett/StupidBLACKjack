@@ -5,9 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StupidBlackjackSln.Properties;
 
 namespace StupidBlackjackSln
 {
@@ -90,7 +92,9 @@ namespace StupidBlackjackSln
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Close();
+            SoundPlayer click = new SoundPlayer(Resources.clack);
+            click.Play();
+			Close();
         }
     }
 }

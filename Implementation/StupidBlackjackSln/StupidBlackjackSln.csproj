@@ -317,7 +317,12 @@
     <None Include="Resources\red_joker.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\240776__f4ngy__card-flip.wav" />
+    <None Include="Resources\391539__mativve__electro-win-sound.wav" />
+    <None Include="Resources\391536__mativve__electro-loose-sound.wav" />
+    <None Include="Resources\370849__cabled-mess__clack-minimal-ui-sounds.wav" />
     <Content Include="Resources\back_of_card.png" />
+    <None Include="Resources\CardFlip.bmp" />
     <None Include="Resources\BlackJackIcon.png" />
     <None Include="Resources\blackjackicon.ico" />
     <None Include="Resources\blackjackTitle.jpg" />
