@@ -149,13 +149,27 @@ namespace StupidBlackjackSln
                     this.Hide();
                 }
             }
-            else if (player.Score <= dealer.Score)
+            else if (player.Score < dealer.Score)
             {
                 streakCounter = 0;
                 losing.Play();
                 DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo);
                 lossRoutines();
                 DealerTurn = true;
+                if (result == DialogResult.Yes)
+                {
+                    startNewGame();
+                }
+                else
+                {
+                    frmTitle frmTitle = new frmTitle();
+                    frmTitle.Show();
+                    this.Hide();
+                }
+            }
+            else if (player.Score == dealer.Score)
+            {
+                DialogResult result = MessageBox.Show("You pushed! Start New Game?", "You pushed!", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     startNewGame();
