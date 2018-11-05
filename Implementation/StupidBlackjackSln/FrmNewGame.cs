@@ -48,7 +48,7 @@ namespace StupidBlackjackSln
     private void FrmNewGame_Load(object sender, EventArgs e) {
       deck = new Deck(FindBitmap);
 
-      lblPlayerStreak.Text = "Streak = " + streakCounter.ToString();
+      lblPlayerStreak.Text = streakCounter.ToString();
       player.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
       dealer.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
       showHand();
@@ -64,9 +64,10 @@ namespace StupidBlackjackSln
             picDealerCards[i].BackgroundImage = (Bitmap)Resources.back_of_card;
         }
       }
-      lblPlayerScore.Text = "Score = " + player.Score.ToString();
+      lblPlayerScore.Text = player.Score.ToString();
       if(player.Hand.Count()==5 && player.Score <= 21)
             {
+                streakCounter += 1;
                 DialogResult result = MessageBox.Show("You Win! Start New Game?", "You Win!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
@@ -216,7 +217,7 @@ namespace StupidBlackjackSln
                 picDealerCards[i].BackgroundImage = null;
             }
 
-            lblPlayerStreak.Text = "Streak = " + streakCounter.ToString();
+            lblPlayerStreak.Text = streakCounter.ToString();
             deck = new Deck(FindBitmap);
             player.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard()});
             dealer.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard()});
