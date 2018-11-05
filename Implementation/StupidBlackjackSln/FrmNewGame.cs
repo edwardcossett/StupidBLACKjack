@@ -114,7 +114,7 @@ namespace StupidBlackjackSln
     {
             DealerTurn = true;
             showHand();
-            while (dealer.Score<player.Score && dealer.Score < 17)
+            while (dealer.Score<player.Score || dealer.Score < 17)
             {
                 dealer.giveCard(deck.dealCard());
                 showHand();
