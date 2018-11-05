@@ -1,4 +1,4 @@
-﻿using StupidBlackjackSln.Code;
+using StupidBlackjackSln.Code;
 using StupidBlackjackSln.Properties;
 using System;
 using System.Collections.Generic;
@@ -16,6 +16,7 @@ namespace StupidBlackjackSln
     private PictureBox[] picPlayerCards;
     private PictureBox[] picDealerCards;
     private int streakCounter;
+    private bool DealerTurn;
 
     public Dealer Dealer { get => dealer; set => dealer = value; }
     public int StreakCounter { get => streakCounter; set => streakCounter = value; }
@@ -47,7 +48,7 @@ namespace StupidBlackjackSln
     private void FrmNewGame_Load(object sender, EventArgs e) {
       deck = new Deck(FindBitmap);
 
-      lblPlayerStreak.Text = streakCounter.ToString();
+      lblPlayerStreak.Text = "Streak = " + streakCounter.ToString();
       player.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
       dealer.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
       showHand();
@@ -59,8 +60,25 @@ namespace StupidBlackjackSln
       }
       for (int i = 0; i < dealer.Hand.Count(); i++) {
         picDealerCards[i].BackgroundImage = dealer.Hand[i].Bitmap;
+        if (!DealerTurn && i == 1){
+            picDealerCards[i].BackgroundImage = (Bitmap)Resources.back_of_card;
+        }
       }
-      lblPlayerScore.Text = player.Score.ToString();
+      lblPlayerScore.Text = "Score = " + player.Score.ToString();
+      if(player.Hand.Count()==5 && player.Score <= 21)
+            {
+                DialogResult result = MessageBox.Show("You Win! Start New Game?", "You Win!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    startNewGame();
+                }
+                else
+                {
+                    frmTitle frmTitle = new frmTitle();
+                    frmTitle.Show();
+                    this.Hide();
+                }
+            }
     }
 
     private void FrmNewGame_FormClosed(object sender, FormClosedEventArgs e) {
@@ -75,6 +93,8 @@ namespace StupidBlackjackSln
             if (player.Score > 21)
             {
                 lossRoutines();
+                DealerTurn = true;
+                showHand();
                 DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
@@ -91,6 +111,8 @@ namespace StupidBlackjackSln
 
     private void btnStand_Click(object sender, EventArgs e)
     {
+            DealerTurn = true;
+            showHand();
             while (dealer.Score<player.Score && dealer.Score < 17)
             {
                 dealer.giveCard(deck.dealCard());
@@ -115,6 +137,7 @@ namespace StupidBlackjackSln
             else if (player.Score <= dealer.Score)
             {
                 lossRoutines();
+                DealerTurn = true;
                 DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
@@ -179,6 +202,7 @@ namespace StupidBlackjackSln
 
     private void startNewGame()
         {
+            DealerTurn = false;
             player.Hand.Clear();
             dealer.Hand.Clear();
             for (int i = 0; i < 5; i++)
@@ -192,7 +216,7 @@ namespace StupidBlackjackSln
                 picDealerCards[i].BackgroundImage = null;
             }
 
-            lblPlayerStreak.Text = streakCounter.ToString();
+            lblPlayerStreak.Text = "Streak = " + streakCounter.ToString();
             deck = new Deck(FindBitmap);
             player.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard()});
             dealer.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard()});
@@ -218,6 +242,9 @@ namespace StupidBlackjackSln
       return (Bitmap)Resources.ResourceManager.GetObject(textName);
     }
 
-        
+        private void lblPlayerName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
