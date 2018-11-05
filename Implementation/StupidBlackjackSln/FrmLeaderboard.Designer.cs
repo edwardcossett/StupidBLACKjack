@@ -58,7 +58,7 @@
             this.btnExit.TabIndex = 0;
             this.btnExit.Text = "Close Window";
             this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.button1_Click);
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -113,7 +113,6 @@
             this.lblName1.Size = new System.Drawing.Size(91, 29);
             this.lblName1.TabIndex = 0;
             this.lblName1.Text = "Name1";
-            this.lblName1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblName2
             // 
@@ -237,7 +236,6 @@
             this.lblTitle.Size = new System.Drawing.Size(210, 37);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "Leaderboard";
-            this.lblTitle.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // FrmLeaderboard
             // 
@@ -254,6 +252,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmLeaderboard";
             this.Text = "Leaderboard";
+            this.Load += new System.EventHandler(this.FrmLeaderboard_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

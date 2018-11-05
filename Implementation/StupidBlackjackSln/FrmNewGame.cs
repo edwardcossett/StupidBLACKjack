@@ -2,17 +2,17 @@ using StupidBlackjackSln.Code;
 using StupidBlackjackSln.Properties;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StupidBlackjackSln {
-  public partial class FrmNewGame : Form {
+namespace StupidBlackjackSln
+{
+    public partial class FrmNewGame : Form {
     private Deck deck;
     private BlackjackPlayer player;
     private Dealer dealer;
@@ -31,7 +31,7 @@ namespace StupidBlackjackSln {
       picDealerCards = new PictureBox[5];
 
       player = new BlackjackPlayer();
-      lblPlayerName.Text = "Name = " + playerName;
+      lblPlayerName.Text = playerName;
       streakCounter = 0;
 
       player.SetName(playerName);
@@ -51,7 +51,7 @@ namespace StupidBlackjackSln {
     private void FrmNewGame_Load(object sender, EventArgs e) {
       deck = new Deck(FindBitmap);
 
-      lblPlayerStreak.Text = "Streak = " + streakCounter.ToString();
+      lblPlayerStreak.Text = streakCounter.ToString();
       player.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
       dealer.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
       showHand();
@@ -72,11 +72,16 @@ namespace StupidBlackjackSln {
             flip.Play();
         }
       }
-      lblPlayerScore.Text = "Score = " + player.Score.ToString();
+      lblPlayerScore.Text = player.Score.ToString();
       if(player.Hand.Count()==5 && player.Score <= 21)
             {
+<<<<<<< HEAD
                 winning.Play();
                 DialogResult result = MessageBox.Show("You Win! Start New Game?", "You Win!", MessageBoxButtons.YesNo);
+=======
+                streakCounter += 1;
+                DialogResult result = MessageBox.Show("You Win! Start New Game?", "You Win!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+>>>>>>> master
                 if (result == DialogResult.Yes)
                 {
                     startNewGame();
@@ -100,10 +105,9 @@ namespace StupidBlackjackSln {
       SoundPlayer losing = new SoundPlayer(Resources.LoseSound);
       player.giveCard(deck.dealCard());
       showHand();
-            System.Threading.Thread.Sleep(200);
             if (player.Score > 21)
             {
-                streakCounter = 0;
+                lossRoutines();
                 DealerTurn = true;
                 showHand();
                 losing.Play();
@@ -127,11 +131,10 @@ namespace StupidBlackjackSln {
             SoundPlayer losing = new SoundPlayer(Resources.LoseSound);
             DealerTurn = true;
             showHand();
-            while (dealer.Score<player.Score && dealer.Score < 17)
+            while (dealer.Score<player.Score || dealer.Score < 17)
             {
                 dealer.giveCard(deck.dealCard());
                 showHand();
-                System.Threading.Thread.Sleep(500);
                 
             }
             if (dealer.Score > 21)
@@ -152,9 +155,15 @@ namespace StupidBlackjackSln {
             }
             else if (player.Score <= dealer.Score)
             {
+<<<<<<< HEAD
                 streakCounter = 0;
                 losing.Play();
                 DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo);
+=======
+                lossRoutines();
+                DealerTurn = true;
+                DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+>>>>>>> master
                 if (result == DialogResult.Yes)
                 {
                     startNewGame();
@@ -183,6 +192,39 @@ namespace StupidBlackjackSln {
                 }
             }
         }
+    private void lossRoutines()
+        {
+            if(!File.Exists("..\\..\\Resources\\input.txt"))
+                File.CreateText("..\\..\\Resources\\input.txt");
+            using (StreamReader input = File.OpenText("..\\..\\Resources\\input.txt"))
+            using (StreamWriter output = new StreamWriter("..\\..\\Resources\\output.txt"))
+            {
+                string line;
+                Boolean found = false;
+                int oldScore;
+                while (null != (line = input.ReadLine()))
+                {
+                    if (!found && line.Contains(lblPlayerName.Text))
+                    {
+                        found = true;
+                        string[] stuff = line.Split(':');
+                        int.TryParse(stuff[1], out oldScore);
+                        if (oldScore < streakCounter)
+                            stuff[1] = streakCounter.ToString();
+                        line = stuff[0] + ':' + stuff[1];
+                    }
+                    output.WriteLine(line);
+                }
+                if (!found)
+                {
+                    line = lblPlayerName.Text + ':' + streakCounter.ToString();
+                    output.WriteLine(line);
+                }
+            }
+            File.Delete("..\\..\\Resources\\input.txt");
+            File.Move("..\\..\\Resources\\output.txt", "..\\..\\Resources\\input.txt");
+            streakCounter = 0;
+        }
 
     private void startNewGame()
         {
@@ -200,7 +242,7 @@ namespace StupidBlackjackSln {
                 picDealerCards[i].BackgroundImage = null;
             }
 
-            lblPlayerStreak.Text = "Streak = " + streakCounter.ToString();
+            lblPlayerStreak.Text = streakCounter.ToString();
             deck = new Deck(FindBitmap);
             player.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard()});
             dealer.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard()});
