@@ -75,6 +75,7 @@ namespace StupidBlackjackSln
                 }
                 else
                 {
+                    lossRoutines();
                     frmTitle frmTitle = new frmTitle();
                     frmTitle.Show();
                     this.Hide();
@@ -118,7 +119,6 @@ namespace StupidBlackjackSln
             {
                 dealer.giveCard(deck.dealCard());
                 showHand();
-                
             }
             if (dealer.Score > 21)
             {
@@ -130,6 +130,7 @@ namespace StupidBlackjackSln
                 }
                 else
                 {
+                    lossRoutines();
                     frmTitle frmTitle = new frmTitle();
                     frmTitle.Show();
                     this.Hide();
@@ -138,7 +139,6 @@ namespace StupidBlackjackSln
             else if (player.Score <= dealer.Score)
             {
                 lossRoutines();
-                DealerTurn = true;
                 DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
@@ -161,6 +161,7 @@ namespace StupidBlackjackSln
                 }
                 else
                 {
+                    lossRoutines();
                     frmTitle frmTitle = new frmTitle();
                     frmTitle.Show();
                     this.Hide();
@@ -169,8 +170,11 @@ namespace StupidBlackjackSln
         }
     private void lossRoutines()
         {
-            if(!File.Exists("..\\..\\Resources\\input.txt"))
+            if (!File.Exists("..\\..\\Resources\\input.txt"))
+            {
                 File.CreateText("..\\..\\Resources\\input.txt");
+                System.Threading.Thread.Sleep(20);
+            }
             using (StreamReader input = File.OpenText("..\\..\\Resources\\input.txt"))
             using (StreamWriter output = new StreamWriter("..\\..\\Resources\\output.txt"))
             {
@@ -243,9 +247,5 @@ namespace StupidBlackjackSln
       return (Bitmap)Resources.ResourceManager.GetObject(textName);
     }
 
-        private void lblPlayerName_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
