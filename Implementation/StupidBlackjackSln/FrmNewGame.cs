@@ -75,13 +75,9 @@ namespace StupidBlackjackSln
       lblPlayerScore.Text = player.Score.ToString();
       if(player.Hand.Count()==5 && player.Score <= 21)
             {
-<<<<<<< HEAD
-                winning.Play();
+				streakCounter += 1;
+				winning.Play();
                 DialogResult result = MessageBox.Show("You Win! Start New Game?", "You Win!", MessageBoxButtons.YesNo);
-=======
-                streakCounter += 1;
-                DialogResult result = MessageBox.Show("You Win! Start New Game?", "You Win!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
->>>>>>> master
                 if (result == DialogResult.Yes)
                 {
                     startNewGame();
@@ -155,15 +151,11 @@ namespace StupidBlackjackSln
             }
             else if (player.Score <= dealer.Score)
             {
-<<<<<<< HEAD
                 streakCounter = 0;
                 losing.Play();
                 DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo);
-=======
                 lossRoutines();
                 DealerTurn = true;
-                DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
->>>>>>> master
                 if (result == DialogResult.Yes)
                 {
                     startNewGame();
