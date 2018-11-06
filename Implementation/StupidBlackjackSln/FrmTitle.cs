@@ -9,12 +9,16 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace StupidBlackjackSln {
   public partial class frmTitle : Form {
-    public frmTitle() {
+		WindowsMediaPlayer p1 = new WindowsMediaPlayer();
+	public frmTitle() {
       InitializeComponent();
-    }
+	  p1.URL = "background.mp3";
+			p1.settings.volume = 25;		
+	}
 
         private String playerName;
 
@@ -74,5 +78,7 @@ namespace StupidBlackjackSln {
         {
 
         }
-    }
+
+
+	}
 }

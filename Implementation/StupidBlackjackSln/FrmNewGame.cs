@@ -55,8 +55,7 @@ namespace StupidBlackjackSln
       player.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
       dealer.giveHand(new List<Card>() { deck.dealCard(), deck.dealCard() });
       showHand();
-      
-        }
+		}
 
     private void showHand() {
       SoundPlayer flip = new SoundPlayer(Resources.CardFlip);
@@ -92,9 +91,14 @@ namespace StupidBlackjackSln
     }
 
     private void FrmNewGame_FormClosed(object sender, FormClosedEventArgs e) {
-      foreach (Form f in Application.OpenForms) {
-        f.Close();
-      }
+		
+				foreach (Form f in Application.OpenForms)
+				{
+					f.Close();
+				}
+		
+			
+      
     }
 
     private void btnHit_Click(object sender, EventArgs e) {
