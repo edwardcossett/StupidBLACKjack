@@ -83,7 +83,8 @@ namespace StupidBlackjackSln
                 }
                 else
                 {
-                    frmTitle frmTitle = new frmTitle();
+                    lossRoutines();
+					frmTitle frmTitle = new frmTitle();
                     frmTitle.Show();
                     this.Hide();
                 }
@@ -91,15 +92,10 @@ namespace StupidBlackjackSln
     }
 
     private void FrmNewGame_FormClosed(object sender, FormClosedEventArgs e) {
-		
-				foreach (Form f in Application.OpenForms)
-				{
-					f.Close();
-				}
-		
-			
-      
-    }
+		foreach (Form f in Application.OpenForms){
+			f.Close();
+		} 
+	}
 
     private void btnHit_Click(object sender, EventArgs e) {
       SoundPlayer losing = new SoundPlayer(Resources.LoseSound);
@@ -148,7 +144,8 @@ namespace StupidBlackjackSln
                 }
                 else
                 {
-                    frmTitle frmTitle = new frmTitle();
+                    lossRoutines();
+					frmTitle frmTitle = new frmTitle();
                     frmTitle.Show();
                     this.Hide();
                 }
@@ -196,7 +193,8 @@ namespace StupidBlackjackSln
                 }
                 else
                 {
-                    frmTitle frmTitle = new frmTitle();
+                    lossRoutines();
+					frmTitle frmTitle = new frmTitle();
                     frmTitle.Show();
                     this.Hide();
                 }
@@ -205,7 +203,10 @@ namespace StupidBlackjackSln
     private void lossRoutines()
         {
             if(!File.Exists("..\\..\\Resources\\input.txt"))
+			{
                 File.CreateText("..\\..\\Resources\\input.txt");
+				System.Threading.Thread.Sleep(20);
+			}
             using (StreamReader input = File.OpenText("..\\..\\Resources\\input.txt"))
             using (StreamWriter output = new StreamWriter("..\\..\\Resources\\output.txt"))
             {
@@ -285,3 +286,4 @@ namespace StupidBlackjackSln
         }
     }
 }
+

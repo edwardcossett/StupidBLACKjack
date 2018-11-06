@@ -99,7 +99,6 @@
             this.lblPlayerName.Size = new System.Drawing.Size(138, 25);
             this.lblPlayerName.TabIndex = 13;
             this.lblPlayerName.Text = "lblPlayerName";
-            this.lblPlayerName.Click += new System.EventHandler(this.lblPlayerName_Click);
             // 
             // lblPlayerStreak
             // 
