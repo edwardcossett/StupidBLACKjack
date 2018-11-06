@@ -152,10 +152,9 @@ namespace StupidBlackjackSln
             }
             else if (player.Score < dealer.Score)
             {
-                streakCounter = 0;
+				lossRoutines();
                 losing.Play();
                 DialogResult result = MessageBox.Show("You Lose! Start New Game?", "You Lose!", MessageBoxButtons.YesNo);
-                lossRoutines();
                 DealerTurn = true;
                 if (result == DialogResult.Yes)
                 {
