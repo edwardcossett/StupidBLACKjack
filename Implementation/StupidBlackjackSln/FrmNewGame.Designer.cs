@@ -55,7 +55,7 @@
             // 
             this.btnHit.AutoSize = true;
             this.btnHit.Location = new System.Drawing.Point(149, 238);
-            this.btnHit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHit.Margin = new System.Windows.Forms.Padding(4);
             this.btnHit.Name = "btnHit";
             this.btnHit.Size = new System.Drawing.Size(40, 28);
             this.btnHit.TabIndex = 5;
@@ -67,7 +67,7 @@
             // 
             this.btnStand.AutoSize = true;
             this.btnStand.Location = new System.Drawing.Point(219, 238);
-            this.btnStand.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStand.Margin = new System.Windows.Forms.Padding(4);
             this.btnStand.Name = "btnStand";
             this.btnStand.Size = new System.Drawing.Size(71, 28);
             this.btnStand.TabIndex = 6;
@@ -117,7 +117,7 @@
             this.picDealerCard5.BackColor = System.Drawing.Color.Transparent;
             this.picDealerCard5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picDealerCard5.Location = new System.Drawing.Point(907, 14);
-            this.picDealerCard5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picDealerCard5.Margin = new System.Windows.Forms.Padding(4);
             this.picDealerCard5.Name = "picDealerCard5";
             this.picDealerCard5.Size = new System.Drawing.Size(141, 177);
             this.picDealerCard5.TabIndex = 12;
@@ -128,7 +128,7 @@
             this.picDealerCard4.BackColor = System.Drawing.Color.Transparent;
             this.picDealerCard4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picDealerCard4.Location = new System.Drawing.Point(717, 14);
-            this.picDealerCard4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picDealerCard4.Margin = new System.Windows.Forms.Padding(4);
             this.picDealerCard4.Name = "picDealerCard4";
             this.picDealerCard4.Size = new System.Drawing.Size(141, 177);
             this.picDealerCard4.TabIndex = 11;
@@ -139,7 +139,7 @@
             this.picDealerCard3.BackColor = System.Drawing.Color.Transparent;
             this.picDealerCard3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picDealerCard3.Location = new System.Drawing.Point(528, 14);
-            this.picDealerCard3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picDealerCard3.Margin = new System.Windows.Forms.Padding(4);
             this.picDealerCard3.Name = "picDealerCard3";
             this.picDealerCard3.Size = new System.Drawing.Size(141, 177);
             this.picDealerCard3.TabIndex = 10;
@@ -150,7 +150,7 @@
             this.picDealerCard2.BackColor = System.Drawing.Color.Transparent;
             this.picDealerCard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picDealerCard2.Location = new System.Drawing.Point(339, 14);
-            this.picDealerCard2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picDealerCard2.Margin = new System.Windows.Forms.Padding(4);
             this.picDealerCard2.Name = "picDealerCard2";
             this.picDealerCard2.Size = new System.Drawing.Size(141, 177);
             this.picDealerCard2.TabIndex = 9;
@@ -161,7 +161,7 @@
             this.picDealerCard1.BackColor = System.Drawing.Color.Transparent;
             this.picDealerCard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picDealerCard1.Location = new System.Drawing.Point(149, 14);
-            this.picDealerCard1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picDealerCard1.Margin = new System.Windows.Forms.Padding(4);
             this.picDealerCard1.Name = "picDealerCard1";
             this.picDealerCard1.Size = new System.Drawing.Size(141, 177);
             this.picDealerCard1.TabIndex = 8;
@@ -172,7 +172,7 @@
             this.picPlayerCard5.BackColor = System.Drawing.Color.Transparent;
             this.picPlayerCard5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPlayerCard5.Location = new System.Drawing.Point(907, 298);
-            this.picPlayerCard5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picPlayerCard5.Margin = new System.Windows.Forms.Padding(4);
             this.picPlayerCard5.Name = "picPlayerCard5";
             this.picPlayerCard5.Size = new System.Drawing.Size(141, 177);
             this.picPlayerCard5.TabIndex = 4;
@@ -183,7 +183,7 @@
             this.picPlayerCard4.BackColor = System.Drawing.Color.Transparent;
             this.picPlayerCard4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPlayerCard4.Location = new System.Drawing.Point(717, 298);
-            this.picPlayerCard4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picPlayerCard4.Margin = new System.Windows.Forms.Padding(4);
             this.picPlayerCard4.Name = "picPlayerCard4";
             this.picPlayerCard4.Size = new System.Drawing.Size(141, 177);
             this.picPlayerCard4.TabIndex = 3;
@@ -194,7 +194,7 @@
             this.picPlayerCard3.BackColor = System.Drawing.Color.Transparent;
             this.picPlayerCard3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPlayerCard3.Location = new System.Drawing.Point(528, 298);
-            this.picPlayerCard3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picPlayerCard3.Margin = new System.Windows.Forms.Padding(4);
             this.picPlayerCard3.Name = "picPlayerCard3";
             this.picPlayerCard3.Size = new System.Drawing.Size(141, 177);
             this.picPlayerCard3.TabIndex = 2;
@@ -205,7 +205,7 @@
             this.picPlayerCard2.BackColor = System.Drawing.Color.Transparent;
             this.picPlayerCard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPlayerCard2.Location = new System.Drawing.Point(339, 298);
-            this.picPlayerCard2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picPlayerCard2.Margin = new System.Windows.Forms.Padding(4);
             this.picPlayerCard2.Name = "picPlayerCard2";
             this.picPlayerCard2.Size = new System.Drawing.Size(141, 177);
             this.picPlayerCard2.TabIndex = 1;
@@ -216,7 +216,7 @@
             this.picPlayerCard1.BackColor = System.Drawing.Color.Transparent;
             this.picPlayerCard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPlayerCard1.Location = new System.Drawing.Point(149, 298);
-            this.picPlayerCard1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picPlayerCard1.Margin = new System.Windows.Forms.Padding(4);
             this.picPlayerCard1.Name = "picPlayerCard1";
             this.picPlayerCard1.Size = new System.Drawing.Size(141, 177);
             this.picPlayerCard1.TabIndex = 0;
@@ -246,7 +246,7 @@
             this.Controls.Add(this.picPlayerCard2);
             this.Controls.Add(this.picPlayerCard1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmNewGame";
             this.Text = "Stupid BlackJack";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmNewGame_FormClosed);

@@ -34,7 +34,7 @@ namespace StupidBlackjackSln {
 
         private void Form1_Load(object sender, EventArgs e) {
             SetPlayerName("???");
-    }
+        }
 
     private void btnRulebook_Click(object sender, EventArgs e) {
      SoundPlayer click = new SoundPlayer(Resources.clack);
@@ -74,11 +74,5 @@ namespace StupidBlackjackSln {
                 SetPlayerName(txtUserName.Text);
         }
 
-        private void lblNameMarker_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-	}
+    }
 }

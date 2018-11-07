@@ -84,18 +84,13 @@ namespace StupidBlackjackSln
                 else
                 {
                     lossRoutines();
-					frmTitle frmTitle = new frmTitle();
-                    frmTitle.Show();
-                    this.Hide();
+					//frmTitle frmTitle = new frmTitle();
+                    //frmTitle.Show();
+                    this.Close();
                 }
             }
     }
 
-    private void FrmNewGame_FormClosed(object sender, FormClosedEventArgs e) {
-		foreach (Form f in Application.OpenForms){
-			f.Close();
-		} 
-	}
 
     private void btnHit_Click(object sender, EventArgs e) {
       SoundPlayer losing = new SoundPlayer(Resources.LoseSound);
@@ -114,9 +109,10 @@ namespace StupidBlackjackSln
                 }
                 else
                 {
-                    frmTitle frmTitle = new frmTitle();
-                    frmTitle.Show();
-                    this.Hide();
+                    //frmTitle frmTitle = new frmTitle();
+                    //frmTitle.Show();
+                    
+                    this.Close();
                 }
             }
     }
@@ -145,9 +141,9 @@ namespace StupidBlackjackSln
                 else
                 {
                     lossRoutines();
-					frmTitle frmTitle = new frmTitle();
-                    frmTitle.Show();
-                    this.Hide();
+					//frmTitle frmTitle = new frmTitle();
+                    //frmTitle.Show();
+                    this.Close();
                 }
             }
             else if (player.Score < dealer.Score)
@@ -162,9 +158,9 @@ namespace StupidBlackjackSln
                 }
                 else
                 {
-                    frmTitle frmTitle = new frmTitle();
-                    frmTitle.Show();
-                    this.Hide();
+                    //frmTitle frmTitle = new frmTitle();
+                    //frmTitle.Show();
+                    this.Close();
                 }
             }
             else if (player.Score == dealer.Score)
@@ -176,9 +172,9 @@ namespace StupidBlackjackSln
                 }
                 else
                 {
-                    frmTitle frmTitle = new frmTitle();
-                    frmTitle.Show();
-                    this.Hide();
+                    //frmTitle frmTitle = new frmTitle();
+                    //frmTitle.Show();
+                    this.Close();
                 }
             }
             else
@@ -193,9 +189,9 @@ namespace StupidBlackjackSln
                 else
                 {
                     lossRoutines();
-					frmTitle frmTitle = new frmTitle();
-                    frmTitle.Show();
-                    this.Hide();
+					//frmTitle frmTitle = new frmTitle();
+                    //frmTitle.Show();
+                    this.Close();
                 }
             }
         }
@@ -292,6 +288,20 @@ namespace StupidBlackjackSln
         private void lblPlayerName_Click(object sender, EventArgs e)
         {
 
+        }
+
+        /// <summary>
+        /// Used to reopen title after FrmNewGame is closed. If many random forms
+        /// start opening, refine this function to only open the title.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmNewGame_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            foreach (Form f in Application.OpenForms)
+            {
+                f.Show();
+            }
         }
     }
 }
