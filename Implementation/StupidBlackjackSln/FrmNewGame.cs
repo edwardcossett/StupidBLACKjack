@@ -199,6 +199,16 @@ namespace StupidBlackjackSln
                 }
             }
         }
+
+    /// <summary>
+    /// This function manages storing player scores when appropriate
+    /// 
+    /// Scores are read from the input.txt file and placed in the output.txt
+    /// file until the current player is found. When the current player's name
+    /// is found, the previous high score is compared and the new high score
+    /// is written to output.txt. After all other scores are written to
+    /// output.txt, input.txt is deleted and output.txt is renamed input.txt.
+    /// </summary>
     private void lossRoutines()
         {
             if(!File.Exists("..\\..\\Resources\\input.txt"))

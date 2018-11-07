@@ -19,7 +19,14 @@ namespace StupidBlackjackSln
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// this function loads the form by reading through the unordered
+        /// input.txt file to find the top 5 scores. This process could be 
+        /// made much more efficient by maintaining a sorted input.txt, but
+        /// its current state has almost no load time regardless.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmLeaderboard_Load(object sender, EventArgs e)
         {
             if (!File.Exists("..\\..\\Resources\\input.txt"))
