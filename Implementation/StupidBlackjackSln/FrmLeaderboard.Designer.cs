@@ -110,9 +110,8 @@
             this.lblName1.Location = new System.Drawing.Point(2, 41);
             this.lblName1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName1.Name = "lblName1";
-            this.lblName1.Size = new System.Drawing.Size(91, 29);
+            this.lblName1.Size = new System.Drawing.Size(0, 29);
             this.lblName1.TabIndex = 0;
-            this.lblName1.Text = "Name1";
             // 
             // lblName2
             // 
@@ -121,9 +120,8 @@
             this.lblName2.Location = new System.Drawing.Point(2, 82);
             this.lblName2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName2.Name = "lblName2";
-            this.lblName2.Size = new System.Drawing.Size(91, 29);
+            this.lblName2.Size = new System.Drawing.Size(0, 29);
             this.lblName2.TabIndex = 2;
-            this.lblName2.Text = "Name2";
             // 
             // lblName3
             // 
@@ -132,9 +130,8 @@
             this.lblName3.Location = new System.Drawing.Point(2, 123);
             this.lblName3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName3.Name = "lblName3";
-            this.lblName3.Size = new System.Drawing.Size(91, 29);
+            this.lblName3.Size = new System.Drawing.Size(0, 29);
             this.lblName3.TabIndex = 4;
-            this.lblName3.Text = "Name3";
             // 
             // lblName4
             // 
@@ -143,9 +140,8 @@
             this.lblName4.Location = new System.Drawing.Point(2, 164);
             this.lblName4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName4.Name = "lblName4";
-            this.lblName4.Size = new System.Drawing.Size(91, 29);
+            this.lblName4.Size = new System.Drawing.Size(0, 29);
             this.lblName4.TabIndex = 6;
-            this.lblName4.Text = "Name4";
             // 
             // lblName5
             // 
@@ -154,9 +150,8 @@
             this.lblName5.Location = new System.Drawing.Point(2, 205);
             this.lblName5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName5.Name = "lblName5";
-            this.lblName5.Size = new System.Drawing.Size(91, 29);
+            this.lblName5.Size = new System.Drawing.Size(0, 29);
             this.lblName5.TabIndex = 8;
-            this.lblName5.Text = "Name5";
             // 
             // lblStreak5
             // 
@@ -165,9 +160,8 @@
             this.lblStreak5.Location = new System.Drawing.Point(141, 205);
             this.lblStreak5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStreak5.Name = "lblStreak5";
-            this.lblStreak5.Size = new System.Drawing.Size(95, 29);
+            this.lblStreak5.Size = new System.Drawing.Size(0, 29);
             this.lblStreak5.TabIndex = 12;
-            this.lblStreak5.Text = "Streak5";
             // 
             // lblStreak4
             // 
@@ -176,9 +170,8 @@
             this.lblStreak4.Location = new System.Drawing.Point(141, 164);
             this.lblStreak4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStreak4.Name = "lblStreak4";
-            this.lblStreak4.Size = new System.Drawing.Size(95, 29);
+            this.lblStreak4.Size = new System.Drawing.Size(0, 29);
             this.lblStreak4.TabIndex = 11;
-            this.lblStreak4.Text = "Streak4";
             // 
             // lblStreak3
             // 
@@ -187,9 +180,8 @@
             this.lblStreak3.Location = new System.Drawing.Point(141, 123);
             this.lblStreak3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStreak3.Name = "lblStreak3";
-            this.lblStreak3.Size = new System.Drawing.Size(95, 29);
+            this.lblStreak3.Size = new System.Drawing.Size(0, 29);
             this.lblStreak3.TabIndex = 10;
-            this.lblStreak3.Text = "Streak3";
             // 
             // lblStreak2
             // 
@@ -198,9 +190,8 @@
             this.lblStreak2.Location = new System.Drawing.Point(141, 82);
             this.lblStreak2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStreak2.Name = "lblStreak2";
-            this.lblStreak2.Size = new System.Drawing.Size(95, 29);
+            this.lblStreak2.Size = new System.Drawing.Size(0, 29);
             this.lblStreak2.TabIndex = 9;
-            this.lblStreak2.Text = "Streak2";
             // 
             // lblStreak1
             // 
@@ -209,9 +200,8 @@
             this.lblStreak1.Location = new System.Drawing.Point(141, 41);
             this.lblStreak1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStreak1.Name = "lblStreak1";
-            this.lblStreak1.Size = new System.Drawing.Size(95, 29);
+            this.lblStreak1.Size = new System.Drawing.Size(0, 29);
             this.lblStreak1.TabIndex = 1;
-            this.lblStreak1.Text = "Streak1";
             // 
             // lblStreakTitle
             // 
