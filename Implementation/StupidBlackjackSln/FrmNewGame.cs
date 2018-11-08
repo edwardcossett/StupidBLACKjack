@@ -94,7 +94,7 @@ namespace StupidBlackjackSln
                     lossRoutines();
 					frmTitle frmTitle = new frmTitle();
                     frmTitle.Show();
-                    this.Hide();
+                    this.Close();
                 }
             }
             if (player.Hand.Count() == 2 && player.Score == 21)
@@ -111,7 +111,7 @@ namespace StupidBlackjackSln
                     lossRoutines();
                     frmTitle frmTitle = new frmTitle();
                     frmTitle.Show();
-                    this.Hide();
+                    this.Close();
                 }
             }
             if (dealer.Hand.Count() == 2 && dealer.Score == 21)
@@ -130,7 +130,7 @@ namespace StupidBlackjackSln
                 {
                     frmTitle frmTitle = new frmTitle();
                     frmTitle.Show();
-                    this.Hide();
+                    this.Close();
                 }
             }
         }
@@ -139,7 +139,7 @@ namespace StupidBlackjackSln
             {
 		    foreach (Form f in Application.OpenForms)
             {
-			    f.Close();
+			    f.Show();
 		    } 
 	    }
 
@@ -163,7 +163,7 @@ namespace StupidBlackjackSln
                 {
                     frmTitle frmTitle = new frmTitle();
                     frmTitle.Show();
-                    this.Hide();
+                    this.Close();
                 }
             }
         }
@@ -191,7 +191,7 @@ namespace StupidBlackjackSln
                     {
                         frmTitle frmTitle = new frmTitle();
                         frmTitle.Show();
-                        this.Hide();
+                        this.Close();
                     }
                 }
                 else
@@ -215,7 +215,7 @@ namespace StupidBlackjackSln
                     lossRoutines();
 					frmTitle frmTitle = new frmTitle();
                     frmTitle.Show();
-                    this.Hide();
+                    this.Close();
                 }
             }
             else if (player.Score < dealer.Score)
@@ -232,7 +232,7 @@ namespace StupidBlackjackSln
                 {
                     frmTitle frmTitle = new frmTitle();
                     frmTitle.Show();
-                    this.Hide();
+                    this.Close();
                 }
             }
             else if (player.Score == dealer.Score)
@@ -246,7 +246,7 @@ namespace StupidBlackjackSln
                 {
                     frmTitle frmTitle = new frmTitle();
                     frmTitle.Show();
-                    this.Hide();
+                    this.Close();
                 }
             }
             else
@@ -263,7 +263,7 @@ namespace StupidBlackjackSln
                     lossRoutines();
 					frmTitle frmTitle = new frmTitle();
                     frmTitle.Show();
-                    this.Hide();
+                    this.Close();
                 }
             }
         }
@@ -273,7 +273,6 @@ namespace StupidBlackjackSln
             if(!File.Exists("..\\..\\Resources\\input.txt"))
 			{
                 File.CreateText("..\\..\\Resources\\input.txt");
-				System.Threading.Thread.Sleep(20);
 			}
             using (StreamReader input = File.OpenText("..\\..\\Resources\\input.txt"))
             using (StreamWriter output = new StreamWriter("..\\..\\Resources\\output.txt"))
@@ -312,12 +311,12 @@ namespace StupidBlackjackSln
             dealer.Hand.Clear();
             for (int i = 0; i < 5; i++)
             {
-                Console.WriteLine(i);
+                //Console.WriteLine(i);
                 picPlayerCards[i].BackgroundImage = null;
             }
             for (int i = 0; i < 5; i++)
             {
-                Console.WriteLine(i);
+                //Console.WriteLine(i);
                 picDealerCards[i].BackgroundImage = null;
             }
 
