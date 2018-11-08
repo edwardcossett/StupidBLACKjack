@@ -39,11 +39,11 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Stencil", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.lblTitle.Location = new System.Drawing.Point(171, 221);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(503, 73);
+            this.lblTitle.Size = new System.Drawing.Size(633, 76);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Stupid Blackjack";
             // 
@@ -95,7 +95,7 @@
             // 
             this.btnLeaderboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLeaderboard.Location = new System.Drawing.Point(459, 524);
-            this.btnLeaderboard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLeaderboard.Margin = new System.Windows.Forms.Padding(2);
             this.btnLeaderboard.Name = "btnLeaderboard";
             this.btnLeaderboard.Size = new System.Drawing.Size(196, 58);
             this.btnLeaderboard.TabIndex = 5;
@@ -110,7 +110,7 @@
             this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtUserName.Location = new System.Drawing.Point(155, 9);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(2);
             this.txtUserName.MaxLength = 16;
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(104, 23);
