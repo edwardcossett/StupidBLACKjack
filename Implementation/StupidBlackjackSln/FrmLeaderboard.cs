@@ -10,15 +10,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StupidBlackjackSln.Properties;
+using WMPLib;
 
 namespace StupidBlackjackSln
 {
     public partial class FrmLeaderboard : Form
     {
-        public FrmLeaderboard()
+		WindowsMediaPlayer click = new WindowsMediaPlayer();
+		public FrmLeaderboard()
         {
             InitializeComponent();
-        }
+			click.settings.autoStart = false;
+			click.URL = "clack.wav";
+		}
         /// <summary>
         /// this function loads the form by reading through the unordered
         /// input.txt file to find the top 5 scores. This process could be 
@@ -29,7 +33,8 @@ namespace StupidBlackjackSln
         /// <param name="e"></param>
         private void FrmLeaderboard_Load(object sender, EventArgs e)
         {
-            if (!File.Exists("..\\..\\Resources\\input.txt"))
+			changeEffectsVolume();
+			if (!File.Exists("..\\..\\Resources\\input.txt"))
                 File.CreateText("..\\..\\Resources\\input.txt");
             using (StreamReader input = File.OpenText("..\\..\\Resources\\input.txt"))
             {
@@ -99,9 +104,14 @@ namespace StupidBlackjackSln
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            SoundPlayer click = new SoundPlayer(Resources.clack);
-            click.Play();
+			click.controls.play();
 			Close();
         }
-    }
+
+		private void changeEffectsVolume()
+		{
+			var principalForm = Application.OpenForms.OfType<frmTitle>().FirstOrDefault();
+			click.settings.volume = principalForm.getEffectsVolume();
+		}
+	}
 }

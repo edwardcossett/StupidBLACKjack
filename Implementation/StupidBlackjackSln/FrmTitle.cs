@@ -14,11 +14,18 @@ using WMPLib;
 namespace StupidBlackjackSln {
   public partial class frmTitle : Form {
 		WindowsMediaPlayer p1 = new WindowsMediaPlayer();
+		WindowsMediaPlayer click = new WindowsMediaPlayer();
+		
 	public frmTitle() {
       InitializeComponent();
 	  p1.URL = "background.mp3";
 			p1.settings.volume = 25;
 			p1.settings.setMode("loop", true);
+
+			click.settings.autoStart = false;
+			click.URL = "clack.wav";
+			
+
 		}
 
         private String playerName;
@@ -38,31 +45,27 @@ namespace StupidBlackjackSln {
         }
 
     private void btnRulebook_Click(object sender, EventArgs e) {
-     SoundPlayer click = new SoundPlayer(Resources.clack);
-     click.Play();
+	 click.controls.play();
      FrmRulebook rulebook = new FrmRulebook();
       rulebook.Show();
     }
 
     private void btnExitGame_Click(object sender, EventArgs e) {
-      SoundPlayer click = new SoundPlayer(Resources.clack);
-      click.Play();
+      click.controls.play();
       DialogResult result = MessageBox.Show("Are you sure you want to quit?", "Are you sure?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
       if (result == DialogResult.Yes)
         Application.Exit();
     }
 
     private void btnNewGame_Click(object sender, EventArgs e) {
-      SoundPlayer click = new SoundPlayer(Resources.clack);
-      click.Play();
+      click.controls.play();
       FrmNewGame frmNewGame = new FrmNewGame(GetPlayerName());
       frmNewGame.Show();
       this.Hide();
     }
 
     private void btnLeaderboard_Click(object sender, EventArgs e) {
-      SoundPlayer click = new SoundPlayer(Resources.clack);
-      click.Play();
+      click.controls.play();
       FrmLeaderboard leaderboard = new FrmLeaderboard();
       leaderboard.Show();
     }
@@ -77,8 +80,7 @@ namespace StupidBlackjackSln {
 
 		private void btnOptions_Click(object sender, EventArgs e)
 		{
-			SoundPlayer click = new SoundPlayer(Resources.clack);
-			click.Play();
+			click.controls.play();
 			FrmOptions options = new FrmOptions();
 			options.Show();
 		}
@@ -91,6 +93,16 @@ namespace StupidBlackjackSln {
 		public int getVolume()
 		{
 			return p1.settings.volume;
+		}
+
+		public void changeEffectsVolume(int newVolume)
+		{
+			click.settings.volume = newVolume;
+		}
+
+		public int getEffectsVolume()
+		{
+			return click.settings.volume;
 		}
 	}
 }

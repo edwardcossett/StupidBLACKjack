@@ -9,17 +9,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StupidBlackjackSln.Properties;
+using WMPLib;
 
 namespace StupidBlackjackSln {
   public partial class FrmRulebook : Form {
-    public FrmRulebook() {
-      InitializeComponent();
+		WindowsMediaPlayer click = new WindowsMediaPlayer();
+		public FrmRulebook() {
+			click.settings.autoStart = false;
+			click.URL = "clack.wav";
+			InitializeComponent();
     }
 
     private void btnCloseWindow_Click(object sender, EventArgs e) {
-     SoundPlayer click = new SoundPlayer(Resources.clack);
-     click.Play();
+	 changeEffectsVolume();
+     click.controls.play();
      Close();
     }
-  }
+		private void changeEffectsVolume()
+		{
+			var principalForm = Application.OpenForms.OfType<frmTitle>().FirstOrDefault();
+			click.settings.volume = principalForm.getEffectsVolume();
+		}
+	}
 }
