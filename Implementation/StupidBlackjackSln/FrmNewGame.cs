@@ -124,7 +124,7 @@ namespace StupidBlackjackSln
                     this.Close();
                 }
             }
-            if (dealer.Hand.Count() == 2 && dealer.Score == 21)
+            else if (dealer.Hand.Count() == 2 && dealer.Score == 21)
             {
                 lossRoutines();
                 DealerTurn = true;
@@ -181,7 +181,6 @@ namespace StupidBlackjackSln
                 if (dealer.Hand.Count() == 5 && dealer.Score <= 21)
                 {
                     lossRoutines();
-                    DealerTurn = true;
                     showHand();
 					lose.controls.play();
 					DialogResult result = MessageBox.Show("You Lose! Start New Game?", "Dealer Five Card Charlie!", MessageBoxButtons.YesNo);
@@ -266,7 +265,8 @@ namespace StupidBlackjackSln
         {
             if(!File.Exists("..\\..\\Resources\\input.txt"))
 			{
-                File.CreateText("..\\..\\Resources\\input.txt");
+                 var iFile = File.CreateText("..\\..\\Resources\\input.txt");
+				 iFile.Close();
 			}
             using (StreamReader input = File.OpenText("..\\..\\Resources\\input.txt"))
             using (StreamWriter output = new StreamWriter("..\\..\\Resources\\output.txt"))
@@ -293,8 +293,10 @@ namespace StupidBlackjackSln
                     output.WriteLine(line);
                 }
             }
-            File.Delete("..\\..\\Resources\\input.txt");
-            File.Move("..\\..\\Resources\\output.txt", "..\\..\\Resources\\input.txt");
+			System.Threading.Thread.Sleep(20);
+			File.Delete("..\\..\\Resources\\input.txt");
+			File.Move("..\\..\\Resources\\output.txt", "..\\..\\Resources\\input.txt");
+	
             streakCounter = 0;
         }
 
