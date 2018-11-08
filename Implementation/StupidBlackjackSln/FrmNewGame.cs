@@ -92,8 +92,6 @@ namespace StupidBlackjackSln
                 else
                 {
                     lossRoutines();
-					frmTitle frmTitle = new frmTitle();
-                    frmTitle.Show();
                     this.Close();
                 }
             }
@@ -109,8 +107,6 @@ namespace StupidBlackjackSln
                 else
                 {
                     lossRoutines();
-                    frmTitle frmTitle = new frmTitle();
-                    frmTitle.Show();
                     this.Close();
                 }
             }
@@ -128,8 +124,6 @@ namespace StupidBlackjackSln
                 }
                 else
                 {
-                    frmTitle frmTitle = new frmTitle();
-                    frmTitle.Show();
                     this.Close();
                 }
             }
@@ -161,8 +155,6 @@ namespace StupidBlackjackSln
                 }
                 else
                 {
-                    frmTitle frmTitle = new frmTitle();
-                    frmTitle.Show();
                     this.Close();
                 }
             }
@@ -189,8 +181,6 @@ namespace StupidBlackjackSln
                     }
                     else
                     {
-                        frmTitle frmTitle = new frmTitle();
-                        frmTitle.Show();
                         this.Close();
                     }
                 }
@@ -213,8 +203,6 @@ namespace StupidBlackjackSln
                 else
                 {
                     lossRoutines();
-					frmTitle frmTitle = new frmTitle();
-                    frmTitle.Show();
                     this.Close();
                 }
             }
@@ -230,8 +218,7 @@ namespace StupidBlackjackSln
                 }
                 else
                 {
-                    frmTitle frmTitle = new frmTitle();
-                    frmTitle.Show();
+                   
                     this.Close();
                 }
             }
@@ -244,8 +231,7 @@ namespace StupidBlackjackSln
                 }
                 else
                 {
-                    frmTitle frmTitle = new frmTitle();
-                    frmTitle.Show();
+               
                     this.Close();
                 }
             }
@@ -261,8 +247,6 @@ namespace StupidBlackjackSln
                 else
                 {
                     lossRoutines();
-					frmTitle frmTitle = new frmTitle();
-                    frmTitle.Show();
                     this.Close();
                 }
             }
