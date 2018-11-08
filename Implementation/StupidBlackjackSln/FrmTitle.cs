@@ -17,8 +17,9 @@ namespace StupidBlackjackSln {
 	public frmTitle() {
       InitializeComponent();
 	  p1.URL = "background.mp3";
-			p1.settings.volume = 25;		
-	}
+			p1.settings.volume = 25;
+			p1.settings.setMode("loop", true);
+		}
 
         private String playerName;
 
@@ -74,5 +75,22 @@ namespace StupidBlackjackSln {
                 SetPlayerName(txtUserName.Text);
         }
 
-    }
+		private void btnOptions_Click(object sender, EventArgs e)
+		{
+			SoundPlayer click = new SoundPlayer(Resources.clack);
+			click.Play();
+			FrmOptions options = new FrmOptions();
+			options.Show();
+		}
+
+		public void changeVolume(int newVolume)
+		{
+			p1.settings.volume = newVolume;
+		}
+
+		public int getVolume()
+		{
+			return p1.settings.volume;
+		}
+	}
 }
