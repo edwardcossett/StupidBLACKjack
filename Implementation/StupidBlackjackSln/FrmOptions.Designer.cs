@@ -38,9 +38,10 @@
 			// button1
 			// 
 			this.button1.BackColor = System.Drawing.SystemColors.Control;
-			this.button1.Location = new System.Drawing.Point(327, 484);
+			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.Location = new System.Drawing.Point(687, 615);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(279, 98);
+			this.button1.Size = new System.Drawing.Size(372, 94);
 			this.button1.TabIndex = 0;
 			this.button1.Text = "Close Window";
 			this.button1.UseVisualStyleBackColor = false;
@@ -48,9 +49,10 @@
 			// 
 			// numericUpDown1
 			// 
-			this.numericUpDown1.Location = new System.Drawing.Point(391, 152);
+			this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.numericUpDown1.Location = new System.Drawing.Point(532, 147);
 			this.numericUpDown1.Name = "numericUpDown1";
-			this.numericUpDown1.Size = new System.Drawing.Size(120, 38);
+			this.numericUpDown1.Size = new System.Drawing.Size(120, 57);
 			this.numericUpDown1.TabIndex = 1;
 			this.numericUpDown1.Value = new decimal(new int[] {
             25,
@@ -61,18 +63,19 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.Location = new System.Drawing.Point(115, 152);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(193, 32);
+			this.label1.Size = new System.Drawing.Size(298, 52);
 			this.label1.TabIndex = 2;
 			this.label1.Text = "Music Volume";
 			// 
 			// button2
 			// 
 			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.Location = new System.Drawing.Point(589, 59);
+			this.button2.Location = new System.Drawing.Point(760, 137);
 			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(375, 217);
+			this.button2.Size = new System.Drawing.Size(318, 67);
 			this.button2.TabIndex = 3;
 			this.button2.Text = "Submit";
 			this.button2.UseVisualStyleBackColor = true;
