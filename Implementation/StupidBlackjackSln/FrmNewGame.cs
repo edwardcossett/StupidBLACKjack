@@ -126,10 +126,9 @@ namespace StupidBlackjackSln
             }
             else if (dealer.Hand.Count() == 2 && dealer.Score == 21)
             {
-                lossRoutines();
                 DealerTurn = true;
-                showHand();
-				lose.controls.play();
+                lossRoutines();
+                lose.controls.play();
 				DialogResult result = MessageBox.Show("You Lose! Start New Game?", "Dealer Blackjack!", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
@@ -293,7 +292,7 @@ namespace StupidBlackjackSln
                     output.WriteLine(line);
                 }
             }
-			System.Threading.Thread.Sleep(20);
+			System.Threading.Thread.Sleep(50);
 			File.Delete("..\\..\\Resources\\input.txt");
 			File.Move("..\\..\\Resources\\output.txt", "..\\..\\Resources\\input.txt");
 	
